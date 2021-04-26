@@ -143,7 +143,7 @@ class Chef{
                     <div class="col-xs-12 overlay-item-caption smoothie"></div>
                     <div class="col-xs-12 hover-item-caption smoothie">
                         <div class="vertical-center">
-                            <h3 class="smoothie"><a href="../view/afficherChefCarte.php?id='. $this->id . '" title="view project">'. $this->nom_chef. ' ' . $this->prenom_chef . '</a><br>' . $this->date_naissance . '<br>' . $this->nationalite . '</h3>
+                            <h3 class="smoothie"><a href="../view/afficherRecetteChef.php?id='. $this->id . '" title="view project">'. $this->nom_chef. ' ' . $this->prenom_chef . '</a><br>' . $this->date_naissance . '<br>' . $this->nationalite . '</h3>
                             <ul class="smoothie list-inline social-links wow fadeIn" data-wow-delay="0.2s">
                                 <li>
                                     <a href="#"><i class="fa fa-instagram"></i></a>

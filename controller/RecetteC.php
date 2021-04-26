@@ -249,6 +249,61 @@ class RecetteController
         }
     }
 
+    public function afficherRecetteChef(){
+        $pdo = connection::getConnexion();
+        if (isset($_GET['id'])) {
+            $chef_id = $_GET['id'];
+            try {
+            $query = $pdo->prepare(
+                'SELECT * FROM recette where id_chef = :id_chef'
+            );
+            $query->execute([
+                'id_chef' => $chef_id
+            ]);
+            $result = $query->fetchAll(PDO::FETCH_CLASS, "Recette");
+            $liste = '';
+            foreach ($result as $recette) {
+                $liste = $liste . $recette->afficherRecetteChef();
+            }
+            $button = '<p class="mt30"><a href="../view/triNbrPersRecette.php?id=' . $recette->getId_chef() . '" class="btn btn-red">Trier les recettes par nombre de personnes</a></p>';
+            return $button . $liste;
+            } catch (PDOException $e) {
+                return $e->getMessage();
+            }
+        }
+        else{
+            return "aucun id trouvé";
+        }
+    }
+
+    public function triType(){
+        $pdo = connection::getConnexion();
+        if (isset($_GET['id'])) {
+            $chef_id = $_GET['id'];
+            try {
+            $query = $pdo->prepare(
+                'SELECT * FROM recette WHERE id_chef = :id_chef ORDER BY nbr_personnes '
+            );
+            $query->execute([
+                'id_chef' => $chef_id
+            ]);
+            $result = $query->fetchAll(PDO::FETCH_CLASS, "Recette");
+            $liste = '';
+            foreach ($result as $recette) {
+                $liste = $liste . $recette->afficherRecetteChef();
+            }
+            return $liste;
+
+            } catch (PDOException $e) {
+                return $e->getMessage();
+            }
+        }
+        else{
+            return "aucun id trouvé";
+        }
+    }
+
+
     public function uploadImg(){
         $target_dir = "../uploads/";
         $random = rand(0,9999);

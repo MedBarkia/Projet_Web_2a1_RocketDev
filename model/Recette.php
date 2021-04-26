@@ -10,6 +10,7 @@ class Recette{
     private $ingredients = null;
     private $preparation = null;
     private $image = null;
+
     
     public function getId(){
       return $this->id;
@@ -108,9 +109,9 @@ class Recette{
                   <div class="form-group">
                     <label class="bmd-label-floating" for="type_recette">Type de la recette</label>
                     <select class="form-control" type="select" id="type_recette" name="type_recette" >
-                      <option value="entree">Entrée</option>
-                      <option value="plat">Plat</option>
-                      <option value="dessert">Dessert</option>
+                      <option value="Entrée">Entrée</option>
+                      <option value="Plat">Plat</option>
+                      <option value="Dessert">Dessert</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -121,9 +122,9 @@ class Recette{
                   <div class="form-group">
                     <label class="bmd-label-floating" for="difficulte_recette">Difficulté de la recette</label>
                     <select class="form-control" type="select" id="difficulte_recette" name="difficulte_recette">
-                      <option value="facile">Facile</option>
-                      <option value="moyenne">Moyenne</option>
-                      <option value="difficile">Difficile</option>
+                      <option value="Facile">Facile</option>
+                      <option value="Moyenne">Moyenne</option>
+                      <option value="Difficile">Difficile</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -180,9 +181,9 @@ class Recette{
                   <div class="form-group">
                     <label class="bmd-label-floating" for="type_recette">Type de la recette</label>
                     <select class="form-control" id="type_recette" name="type" >
-                      <option value="entree" ' . ($this->type == 'entree' ? ' selected="selected"' : '') . '>Entrée</option>
-                      <option value="plat" ' . ($this->type == 'plat' ? ' selected="selected"' : '') . '>Plat</option>
-                      <option value="dessert" ' . ($this->type == 'dessert' ? ' selected="selected"' : '') . '>Dessert</option>
+                      <option value="Entrée" ' . ($this->type == 'Entrée' ? ' selected="selected"' : '') . '>Entrée</option>
+                      <option value="Plat" ' . ($this->type == 'Plat' ? ' selected="selected"' : '') . '>Plat</option>
+                      <option value="Dessert" ' . ($this->type == 'Dessert' ? ' selected="selected"' : '') . '>Dessert</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -193,9 +194,9 @@ class Recette{
                   <div class="form-group">
                     <label class="bmd-label-floating" for="difficulte">Difficulté de la recette</label>
                       <select class="form-control" id="difficulte" name="difficulte_recette">
-                        <option value="facile" ' . ($this->difficulte == 'facile' ? ' selected="selected"' : '') . '>Facile</option>
-                        <option value="moyenne" ' . ($this->difficulte == 'moyenne' ? ' selected="selected"' : '') . '>Moyenne</option>
-                        <option value="difficile" ' . ($this->difficulte == 'difficile' ? ' selected="selected"' : '') . '>Difficile</option>
+                        <option value="Facile" ' . ($this->difficulte == 'Facile' ? ' selected="selected"' : '') . '>Facile</option>
+                        <option value="Moyenne" ' . ($this->difficulte == 'Moyenne' ? ' selected="selected"' : '') . '>Moyenne</option>
+                        <option value="Difficile" ' . ($this->difficulte == 'Difficile' ? ' selected="selected"' : '') . '>Difficile</option>
                       </select>
                   </div>
                   <div class="form-group">
@@ -222,6 +223,27 @@ class Recette{
                   <button type="reset" class="btn btn-primary pull-right">Reset</button>
               </form>';
     }
+
+
+    public function afficherRecetteChef(){
+      return '
+               <div class="col-xs-3">
+                  <img src="' . $this->image . '" class="img-responsive smoothie" alt="" height="50" width="300"><br><br>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-5 col-md-offset-1">
+                          <h2 <span class="theme-accent-color">'. $this->nom_recette .'</span></h2>
+                          <p class="lead"><B>Type de la recette:</B> '.$this->type.'<br><B>Pour: </B>' . $this->nbr_personnes . ' Personnes<br><B> Durée: </B>' . $this->duree . '<br> <B> Difficulté: </B>' . $this->difficulte . ' <br><B>Ingrédients: </B>' . $this->ingredients . ' <br><B>Préparation: </B> ' . $this->preparation. '</p>
+                      </div>
+                  </div>
+              </div>
+              <hr style="height:1px;border-width:0;color:orange;background-color:orange">';
+    }
+
+
+
+
   }
 
 ?>
