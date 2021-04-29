@@ -1,7 +1,13 @@
 <?php
+session_start();
+
 	include "../controller/administrateurC.php";
 	include_once '../Model/administrateur.php';
-
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionAd.php');
+   }
 	$administrateurC = new administrateurC();
 	$error = "";
 	
@@ -46,6 +52,11 @@ coup de chef  </title>
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
+<style> 
+ input[type=submit] , input[type=reset] {
+  background-color: #f8ceec; color: black; /* Gray */
+border-radius: 4px;
+}</style>
 
 	</head>
 	<body>
@@ -69,10 +80,22 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item active  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
             </a>
           </li>
            
@@ -134,7 +157,6 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-            <button><a href="ajouterAdmin.php">Add Admin</a></button>
 
             <ul class="navbar-nav">
               <li class="nav-item">

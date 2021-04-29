@@ -1,9 +1,15 @@
 <?php
+session_start();
+
     include "../controller/UtilisateurC.php";
   include_once '../Model/Utilisateur.php';
-
-	$UtilisateurC = new UtilisateurC();
-	$error = "";
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexion.php');
+   }
+    $UtilisateurC = new UtilisateurC();
+    $error = "";
   if (
     isset($_POST["nom"]) && 
         isset($_POST["prenom"]) &&
@@ -27,7 +33,6 @@
       );
       
             $UtilisateurC->modifierUtilisateur($user, $_GET['id']);
-            //header('refresh:5;url=afficherUtilisateurs.php');
         }
         
         else
@@ -38,11 +43,10 @@
 ?>
 
 <?php
-	session_start();
-	if(!isset($_SESSION["id"])){
+    if(!isset($_SESSION["id"])){
     var_dump($_SESSION);
-		exit(); 
-	}
+        exit(); 
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +71,6 @@
     <link href="assets/css/plugins.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -83,17 +86,14 @@
         <i class="icofont-phone"></i> +216 94 366 666
         <i class="icofont-google-map"></i> tunis , araiana essoghra technopole ghazela
       </div>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
+     
     </div>
   </div>
 
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The social media icon bar -->
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
 <div class="container d-flex align-items-center">
@@ -128,25 +128,25 @@
 
   </header><!-- End Header -->
         <section></section>
-		<?php
-			if (isset($_GET['id'])){
-				$user = $UtilisateurC->recupererUtilisateur1($_GET['id']);	
-		?>
-		    <div id="layoutAuthentication">
+        <?php
+            if (isset($_GET['id'])){
+                $user = $UtilisateurC->recupererUtilisateur1($_GET['id']);  
+        ?>
+            <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h1 class="text-center font-weight-light my-4">Modifier mon profil</h1>
+                                    <h1 class="text-center font-weight-light my-4 " style="color:white">Modifier mon profil</h1>
                                 </div>
                                 <div class="card-body">
                                     <form   name="formUtilisateur" action="" method="POST"  onsubmit=" return verifUtilisateur();">
                                         <table  align="center">
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="nom">Nom:</label>
+                                                    <label for="nom" style="color:white";>Nom:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="nom" id="nom" maxlength="20" value = "<?php echo $user->nom; ?>">
@@ -157,7 +157,7 @@
 
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="prenom">Prénom:</label>
+                                                    <label  for="prenom" style="color:white";>Prénom:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="prenom" id="prenom" maxlength="20" value = "<?php echo $user->prenom; ?>">
@@ -172,7 +172,7 @@
                                             
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="email">Adresse mail:</label>
+                                                    <label  for="email" style="color:white";>Adresse mail:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="email" name="email" id="email" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.fr|.+yahoo.com" value = "<?php echo $user->email; ?>">
@@ -181,7 +181,7 @@
 
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="login">Login:</label>
+                                                    <label  for="login" style="color:white";>Login:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="login" id="login" value = "<?php echo $user->login; ?>">
@@ -192,7 +192,7 @@
 
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="pass">Mot de passe:</label>
+                                                    <label  for="pass" style="color:white";>Mot de passe:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="password" name="pass" id="pass" value = "<?php echo $user->pass; ?>">
@@ -223,8 +223,8 @@
                 </div>                         
             </div>
         </div>
-		<?php
-		}
+        <?php
+        }
         ?>
         
 <

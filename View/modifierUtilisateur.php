@@ -1,7 +1,13 @@
 <?php
+session_start();
+
 	include "../controller/UtilisateurC.php";
 	include_once '../Model/Utilisateur.php';
-
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+       // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionAd.php');
+   }
 	$utilisateurC = new UtilisateurC();
 	$error = "";
 	
@@ -51,14 +57,13 @@ coup de chef  </title>
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <style> 
+ input[type=submit] , input[type=reset] {
+  background-color: #f8ceec; color: black; /* Gray */
+border-radius: 4px;
+}</style>
 	</head>
 	<body>
-		<button><a href="afficherUtilisateurs.php">Retour à la liste</a></button>
-        <hr>
-        <button><a href="afficherUtilisateurs.php">Retour </a></button>
-
-        <button><a href="ajouterAdmin.php">Ajouter un Admin</a></button>
-        <hr>
 
     <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -78,10 +83,22 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+         <li class="nav-item active ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
             </a>
           </li>
            
@@ -114,8 +131,7 @@ coup de chef  </title>
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
-          </li>
-          
+          </li>   
         </ul>
       </div>
     </div>
@@ -124,7 +140,6 @@ coup de chef  </title>
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Administration</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -143,7 +158,6 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-            <button><a href="ajouterAdmin.php">Add Admin</a></button>
 
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -198,7 +212,7 @@ coup de chef  </title>
               <div class="card">
                 <div class="card-header card-header-primary">
 
-                  <h4 class="card-title">Edit user</h4>
+                  <h4 class="card-title">Modifier Utilisateur</h4>
 
                 </div>
 

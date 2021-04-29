@@ -102,9 +102,9 @@
 			}
 		}
 
-		/*function connexionUser($email,$pass){
+		function connexionUser($login,$pass){
 
-            $sql="SELECT * FROM utilisateur WHERE Email='" . $email . "' and Password = '". $pass ."'";
+            $sql="SELECT * FROM livreur WHERE login='" . $login . "' and pass = '". $pass ."'";
             $db = config::getConnexion();
             try{
                 $query=$db->prepare($sql);
@@ -121,7 +121,7 @@
                     $message= " ".$e->getMessage();
             }
           return $message;
-        }*/
+        }
 
 	}
 

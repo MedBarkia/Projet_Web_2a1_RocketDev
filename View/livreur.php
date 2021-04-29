@@ -1,3 +1,15 @@
+<?PHP
+session_start();
+
+// On teste si la variable de session existe et contient une valeur
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionLivreur.php');
+   }
+  
+?>
+
 <!--
 =========================================================
 Material Dashboard - v2.1.2

@@ -1,27 +1,23 @@
 <?php
-require('../config.php');
 session_start();
-
-if (isset($_POST['login'])){
-        $login=$_POST['login'];
-        $pass=$_POST['pass'];
-        $sql="SELECT * FROM livreur WHERE login='" . $login . "' && pass = '". $pass ."'";
-                $db = config::getConnexion();
-                try{
-                        $query=$db->prepare($sql);
-                        $query->execute();
-                        $count=$query->rowCount();
-                        if($count==1){
-                            $user=$query->fetch(); 
-                            $_SESSION['id'] = $user['id'];
-                            header('Location:livreur.php');
-                        }
-                }
-                catch (Exception $e){
-                    die('Erreur: '.$e->getMessage());
-                }
-    } 
-
+include_once '../Model/livreur.php';
+include_once '../Controller/livreurC.php';
+$message="";
+$userC = new livreurC();
+if (isset($_POST["login"]) &&
+    isset($_POST["pass"])) {
+    if (!empty($_POST["login"]) &&
+        !empty($_POST["pass"]))
+    {   $message=$userC->connexionUser($_POST["login"],$_POST["pass"]);
+         $_SESSION['e'] = $_POST["login"];// on stocke dans le tableau une colonne ayant comme nom "e",
+        //  avec l'email à l'intérieur
+        if($message!='pseudo ou le mot de passe est incorrect'){
+           header('Location:livreur.php');}
+        else{
+            $message='pseudo ou le mot de passe est incorrect';
+        }}
+    else
+        $message = "Missing information";}
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +41,7 @@ coup de chef  </title>
     </head>
 
     <body >
-        <button><a href="connexion.php">Espace Utilisateur</a></button>
-        <button><a href="connexionAd.php">Espace Administration</a></button>
+        
 
         
         <div id="layoutAuthentication">

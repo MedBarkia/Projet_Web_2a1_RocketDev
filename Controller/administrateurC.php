@@ -99,9 +99,9 @@
 			}
 		}
 
-		/*function connexionUser($email,$pass){
+		function connexionUser($email,$pass){
 
-            $sql="SELECT * FROM utilisateur WHERE Email='" . $email . "' and Password = '". $pass ."'";
+            $sql="SELECT * FROM administrateur WHERE email='" . $email . "' and pass = '". $pass ."'";
             $db = config::getConnexion();
             try{
                 $query=$db->prepare($sql);
@@ -118,7 +118,7 @@
                     $message= " ".$e->getMessage();
             }
           return $message;
-        }*/
+        }
 
 	}
 

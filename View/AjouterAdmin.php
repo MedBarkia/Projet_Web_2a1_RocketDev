@@ -1,7 +1,15 @@
 <?php
+session_start();
+
 include_once '../Model/administrateur.php';
 include_once '../Controller/administrateurC.php';
-
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionAd.php');
+   }
+  $administrateurC=new administrateurC();
+  $listeUsers=$administrateurC->afficherAdmin();
 $error = "";
 
 // create user
@@ -54,7 +62,6 @@ coup de chef  </title>
 
 </head>
 <body class="">
-<button><a href="afficherAdmin.php">Retour à la liste</a></button>
 
     <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -74,12 +81,26 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+         </li>
+          <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
             </a>
           </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item active  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
+            </a>
+          </li>
+           
            
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
@@ -139,7 +160,6 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-                        <button><a href="afficherAdmin.php">show Admin</a></button>
 
             <ul class="navbar-nav">
               <li class="nav-item">

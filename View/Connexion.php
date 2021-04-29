@@ -1,31 +1,24 @@
 <?php
-    require('../config.php');
+session_start();
+  include "../controller/UtilisateurC.php";
+  include_once '../Model/Utilisateur.php';
+$message="";
 
-                  session_start();
-
-    if (isset($_POST['email'])){
-        $email=$_POST['email'];
-        $pass=$_POST['pass'];
-        $sql="SELECT * FROM utilisateur WHERE email='" . $email . "' && pass = '". $pass."'";
-        $db = config::getConnexion();
-        try{
-            $query=$db->prepare($sql);
-            $query->execute();
-            $count=$query->rowCount();
-            if($count==1){
-
-                $user=$query->fetch(); 
-                $_SESSION['name'] = $row['name'];
-                $_SESSION['id'] = $user['id'];
-                header('Location:intex.php');
-            }
-        }
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }
-  }
-   
-  
+$userC = new UtilisateurC();
+if (isset($_POST["email"]) &&
+    isset($_POST["pass"])) {
+    if (!empty($_POST["email"]) &&
+        !empty($_POST["pass"]))
+    {   $message=$userC->connexionUser($_POST["email"],$_POST["pass"]);
+         $_SESSION['e'] = $_POST["email"];// on stocke dans le tableau une colonne ayant comme nom "e",
+        //  avec l'email à l'intérieur
+        if($message!='pseudo ou le mot de passe est incorrect'){
+           header('Location:intex.php');}
+        else{
+            $message='pseudo ou le mot de passe est incorrect';
+        }}
+    else
+        $message = "Missing information";}
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +53,37 @@
   <!-- Favicons -->
 
   <!-- Vendor CSS Files -->
+<!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/pe-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-phone"></i> +216 94 366 666
+        <i class="icofont-google-map"></i> tunis , araiana essoghra technopole ghazela
+      </div>
+     
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The social media icon bar -->
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
 
   <!-- Template Main CSS File -->
 
@@ -73,8 +96,7 @@
 </head>
 
 <body> 
-        <button><a href="connexionAd.php">Espace Administration</a></button>
-        <button><a href="connexionLivreur.php">Espace Livreurs</a></button>
+        
 
   
 

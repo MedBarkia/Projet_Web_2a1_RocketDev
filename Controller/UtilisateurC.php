@@ -105,9 +105,9 @@
 			}
 		}
 
-		/*function connexionUser($email,$pass){
+		function connexionUser($email,$pass){
 
-            $sql="SELECT * FROM utilisateur WHERE Email='" . $email . "' and Password = '". $pass ."'";
+            $sql="SELECT * FROM utilisateur WHERE email='" . $email . "' and pass = '". $pass ."'";
             $db = config::getConnexion();
             try{
                 $query=$db->prepare($sql);
@@ -118,13 +118,17 @@
                 } else {
                     $x=$query->fetch();
                     $message = $x['role'];
+                     $_SESSION['id'] = $x['id'];
+
+
+
                 }
             }
             catch (Exception $e){
                     $message= " ".$e->getMessage();
             }
           return $message;
-        }*/
+        }
 
 	}
 

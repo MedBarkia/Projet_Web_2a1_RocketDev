@@ -1,7 +1,13 @@
 <?php
+session_start();
+
 	include "../controller/livreurC.php";
 	include_once '../Model/livreur.php';
-
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+       // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionAd.php');
+   }
 	$livreurC = new livreurC();
 	$error = "";
 	
@@ -49,10 +55,13 @@ coup de chef  </title>
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
-
+<style> 
+ input[type=submit] , input[type=reset] {
+  background-color: #f8ceec; color: black; /* Gray */
+border-radius: 4px;
+}</style>
     </head>
     <body>
-        <button><a href="afficherAdmin.php">Retour à la liste</a></button>
 
         <hr>
             <div class="wrapper ">
@@ -73,13 +82,24 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+           <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
             </a>
           </li>
-           
+           <li class="nav-item  active ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
+            </a>
+          </li>
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
@@ -119,7 +139,6 @@ coup de chef  </title>
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Administration</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -138,8 +157,7 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-            <button><a href="ajouterAdmin.php">Add Admin</a></button>
-                <button><a href="AjouterLivreur.php">Add livreur</a></button>
+          
 
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -194,7 +212,7 @@ coup de chef  </title>
               <div class="card">
                 <div class="card-header card-header-primary">
 
-                  <h4 class="card-title">Edit Livreur</h4>
+                  <h4 class="card-title">Modifier Livreur</h4>
 
                 </div>
 

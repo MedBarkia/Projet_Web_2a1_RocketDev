@@ -23,13 +23,15 @@ coup de chef  </title>
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
 
-
+<style> 
+ input[type=submit]  {
+  background-color: #f8ceec; color: black; /* Gray */
+border-radius: 4px;
+}
+</style>
     </head>
-    <body>
-<button><a href="afficherLivreur.php">Retour </a></button>
+<body class="">
 
-		<button><a href="ajouterLivreur.php">Ajouter un livreur</a></button>
-     	<hr>
 
     <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -49,10 +51,22 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
+            </a>
+          </li>
+           <li class="nav-item  active ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
             </a>
           </li>
            
@@ -90,12 +104,16 @@ coup de chef  </title>
         </ul>
       </div>
     </div>
+    <hr>
     <div class="main-panel">
       <!-- Navbar -->
+
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Administration</a>
+
+                        <a href="ajouterLivreur.php" class="appointment-btn scrollto">Ajouter Livreur</a>
+
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -114,7 +132,6 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-            <button><a href="ajouterLivreur.php">Add Livreur</a></button>
 
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -169,7 +186,7 @@ coup de chef  </title>
               <div class="card">
                 <div class="card-header card-header-primary">
 
-                  <h4 class="card-title">Show Livreur</h4>
+                  <h4 class="card-title">Listes Livreurs</h4>
 
                 </div>
 
@@ -179,9 +196,10 @@ coup de chef  </title>
 			<tr>
 				<th>Id</th>
 				<th>Nom</th>
-				<th>Email</th>
-				<th>supprimer</th>
-				<th>modifier</th>
+				<th>Prenom</th>
+				<th>Login</th>
+          <th>supprimer</th>
+        <th>modifier</th>
 			</tr>
 
 			<?PHP

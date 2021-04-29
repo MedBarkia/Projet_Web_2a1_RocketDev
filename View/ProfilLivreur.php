@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION["e"])){
     var_dump($_SESSION);
     // Si inexistante ou nulle, on redirige vers le formulaire de login
-  header('Location: connexion.php');
+  header('Location: connexionLivreur.php');
    }
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,13 @@
 <?php
+session_start();
+
 include_once '../Model/livreur.php';
 include_once '../Controller/livreurC.php';
-
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+  header('Location: connexionAd.php');
+   }
 $error = "";
 
 // create user
@@ -87,13 +93,26 @@ coup de chef  </title>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+           <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
-              <p>Administration</p>
+              <p>Utilisateurs</p>
+            </a>
+          </li>
+           <li class="nav-item  active ">
+            <a class="nav-link" href="afficherLivreur.php">
+              <i class="material-icons">person</i>
+              <p>Livreurs</p>
+            </a>
+          </li>
+           <li class="nav-item  ">
+            <a class="nav-link" href="afficherAdmin.php">
+              <i class="material-icons">person</i>
+              <p>Administrateurs</p>
             </a>
           </li>
            
+          
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
@@ -133,7 +152,6 @@ coup de chef  </title>
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Administration</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -152,7 +170,6 @@ coup de chef  </title>
                 </button>
               </div>
             </form>
-                                        <button><a href="afficherLivreur.php">show livreur</a></button>
 
 
             <ul class="navbar-nav">

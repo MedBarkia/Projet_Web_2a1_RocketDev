@@ -5,19 +5,18 @@ session_start();
 if(!isset($_SESSION["e"])){
     var_dump($_SESSION);
     // Si inexistante ou nulle, on redirige vers le formulaire de login
-  header('Location: connexion.php');
+  header('Location: connexionAd.php');
    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Utilisateur</title>
+    <title>Admin</title>
         <link rel="stylesheet" type="text/css" href="../css/cn.css">
 
 </head>
 <body>
-<button><a href="deconnexion.php">Déconnecter</a></button>
-<hr>
+
 <?php
 // Il est bien connecté
 echo 'Bienvenue  ', $_SESSION['e'];
