@@ -122,6 +122,21 @@
             }
           return $message;
         }
+         function rechercherUsers($nom)
+    {        
+                 $sql="SELECT * FROM livreur WHERE nom LIKE '".$nom."%'";
+                 $db = config::getConnexion();
+
+               	try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+
+
+    }
 
 	}
 

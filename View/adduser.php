@@ -80,69 +80,119 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Custom Fonts -->
     <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/pe-icons.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
-</head>
+
+      <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+    <style>
+        body{
+        padding:10% 3% 10% 3%;
+        text-align:center;
+        }
+        img{
+            height:140px;
+                width:140px; 
+        }
+               .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+    </head>
 
 <body class="">
     <a class="navbar-brand smoothie" href="addU.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
-<hr>
-<hr>
+  <header id="header" class="fixed-top">
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <hr>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
 
 <div id="error">
     <?php echo $error; ?>
 </div>
 
 
-  
+  <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Inscription</h4>
+                  <p class="card-category"> Crée Un compte</p>
+                </div>
+                <div class="card-body">
        
                   <form  name="formUtilisateur" action="" method="POST" onsubmit=" return verifUtilisateur();">
-                      <div class="row">
-
-                   <div class="col-md-5">
+                     <div class="row">
+                      <div class="col-md-5">
                         <div class="form-group">
-                <label for="nom">Nom:
+
+
+                <label class="bmd-label-floating" for="nom">Nom:
                 </label>
             <input type="text" name="nom" id="nom" maxlength="30" class="form-control" required pattern="[A-Za-z\s]+" >
             <div style=" color: red;" id="erreurNom"></div>
-                     </div>
+
+                      </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                <label for="prenom">Prénom:
-                </label>
-            
+
+                <label class="bmd-label-floating" for="prenom">Prénom:
+                </label>   
             <input type="text" name="prenom" id="prenom" maxlength="30" class="form-control" required pattern="[A-Za-z\s]+" >
                         <div style=" color: red;" id="erreurPrenom"></div>
 
-                    </div>
+                   </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
 
-                <label for="email">Adresse mail:
+                <label class="bmd-label-floating" for="email">Adresse mail:
                 </label>
             
                 <input type="email" name="email" id="email" pattern=".+@gmail.com|.+@esprit.tn" class="form-control">
-            </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-
-                <label for="login">Login:
-                </label>
-            
-                <input type="text" name="login" id="login" class="form-control" >
-                                        <div style=" color: red;" id="erreurlogin"></div>
-
-           
-                       </div>
+             </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
 
-                <label for="pass">Mot de passe:
+                <label class="bmd-label-floating" for="login">Login:
+                </label>
+            
+                <input type="text" name="login" id="login" class="form-control" >
+                                        <div style=" color: red;" id="erreurlogin"></div>
+
+             </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                <label class="bmd-label-floating" for="pass">Mot de passe:
                 </label>
             
                 <input type="password" name="pass" id="pass" class="form-control">
@@ -150,22 +200,44 @@ The above copyright notice and this permission notice shall be included in all c
 
              </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4"  >
                         <div class="form-group">
 
                               </div>
                       </div>
                     </div>
-                   
+
                                <div class="clearfix"></div>
-                               <input type="submit" value="s'inscrit">
-<button><a href="connexion.php">J'ai deja un compte </a></button>
+                               <input class="btn btn-primary btn-block" type="submit" value="s'inscrit">
+  <div> <a href="connexion.php">J'ai deja un compte  </a> </div>
 
-
+   </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </form>
                 
     <script src="script.js"></script>
-
+     <div class="mode">
+        Dark mode:             
+        <span class="change">OFF</span>
+    </div>
+      
+  
+      
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
 </body>
 
 </html>

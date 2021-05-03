@@ -226,15 +226,15 @@ coup de chef  </title>
 </div>
 
 <form name="formAdmin" action="" method="POST" onsubmit=" return verifAdmin();">
-    <table border="1" align="center">
+    <table class="table" >
 
         <tr>
-            <td rowspan='2' colspan='1'>Fiche Personnelle</td>
+           
             <td>
-                <label for="nom">Nom:
+                <label class="bmd-label-floating" or="nom">Nom:
                 </label>
             </td>
-            <td><input type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" >
+            <td><input  class="form-control" type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" >
                                     <div style=" color: red;" id="erreurNom"></div>
 </td>
 
@@ -243,25 +243,24 @@ coup de chef  </title>
 
         <tr>
             <td>
-                <label for="email">Adresse mail:
+                <label class="bmd-label-floating"  for="email">Adresse mail:
                 </label>
             </td>
             <td>
-                <input type="email" name="email" id="email" pattern=".+@CoupDeChef.tn">
+                <input class="form-control"  type="email" name="email" id="email" pattern=".+@CoupDeChef.tn">
             </td>
         </tr>
         <tr>
-            <td rowspan='2' colspan='1'>Information de Connexion</td>
             
         </tr>
         
         <tr>
             <td>
-                <label for="pass">Mot de passe:
+                <label  class="bmd-label-floating" for="pass">Mot de passe:
                 </label>
             </td>
             <td>
-                <input type="password" name="pass" id="pass">
+                <input  class="form-control" type="password" name="pass" id="pass">
                 <div style=" color: red;" id="erreurpass"></div>
 
             </td>
@@ -270,10 +269,10 @@ coup de chef  </title>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Envoyer">
+                <input class="btn btn-primary btn-block" type="submit" value="Envoyer">
             </td>
             <td>
-                <input type="reset" value="Annuler" >
+                <input   class="btn btn-primary btn-block" type="reset" value="Annuler" >
             </td>
         </tr>
     </table>

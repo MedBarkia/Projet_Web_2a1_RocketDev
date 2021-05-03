@@ -227,15 +227,14 @@ border-radius: 4px;
 				
 		?>
 		<form name="formAdmin" action="" method="POST" onsubmit=" return verifAdmin();">
-    <table border="1" align="center">
+    <table class="table">
                 <tr>
-                                <td rowspan='3' colspan='1'>Fiche Personnelle</td>
                     <td>
                         <label for="id">Id:
                         </label>
                     </td>
                     <td>
-						<input type="text" name="id" id="id"  value = "<?php echo $user['id']; ?>" disabled>
+						<input  class="form-control"  type="text" name="id" id="id"  value = "<?php echo $user['id']; ?>" disabled>
 
 					</td>
 				</tr>
@@ -245,7 +244,7 @@ border-radius: 4px;
 						</label>
 					</td>
 					<td>
-						<input type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" value = "<?php echo $user['nom']; ?>">
+						<input  class="form-control" type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" value = "<?php echo $user['nom']; ?>">
                                                           <div style=" color: red;" id="erreurNom"></div>
 
 					</td>
@@ -259,11 +258,10 @@ border-radius: 4px;
                         </label>
                     </td>
                     <td>
-                        <input type="email" name="email" id="email" pattern=".+@CoupDeChef.tn" value = "<?php echo $user['email']; ?>">
+                        <input  class="form-control" type="email" name="email" id="email" pattern=".+@CoupDeChef.tn" value = "<?php echo $user['email']; ?>">
                     </td>
                 </tr>
                 <tr>
-                    <td rowspan='2' colspan='1'>Information de Connexion</td>
                     
                     </td>
                     
@@ -274,7 +272,7 @@ border-radius: 4px;
                         </label>
                     </td>
                     <td>
-                        <input type="password" name="pass" id="pass" value = "<?php echo $user['pass']; ?>">
+                        <input  class="form-control" type="password" name="pass" id="pass" value = "<?php echo $user['pass']; ?>">
                                         <div style=" color: red;" id="erreurpass"></div>
 
                     </td>
@@ -283,10 +281,10 @@ border-radius: 4px;
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
+                        <input class="btn btn-primary pull-right" type="submit" value="Modifier" name = "modifer"> 
                     </td>
                     <td>
-                        <input type="reset" value="Annuler" >
+                        <input class="btn btn-primary pull-right" type="reset" value="Annuler" >
                     </td>
                 </tr>
             </table>

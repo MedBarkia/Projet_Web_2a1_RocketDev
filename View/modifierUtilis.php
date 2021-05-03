@@ -75,7 +75,38 @@ if(!isset($_SESSION["e"])){
     <!-- Custom Fonts -->
     <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/pe-icons.css" rel="stylesheet">
-</head>
+
+      <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+    <style>
+        body{
+        padding:10% 3% 10% 3%;
+        text-align:center;
+        }
+        img{
+            height:140px;
+                width:140px; 
+        }
+               .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+    </head>
 
 <body>
 
@@ -121,13 +152,13 @@ if(!isset($_SESSION["e"])){
 
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/pe-icons.css" rel="stylesheet">
 
   </header><!-- End Header -->
-        <section></section>
         <?php
             if (isset($_GET['id'])){
                 $user = $UtilisateurC->recupererUtilisateur1($_GET['id']);  
@@ -139,14 +170,14 @@ if(!isset($_SESSION["e"])){
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h1 class="text-center font-weight-light my-4 " style="color:white">Modifier mon profil</h1>
+                                    <h1 class="text-center font-weight-light my-4 " >Modifier mon profil</h1>
                                 </div>
                                 <div class="card-body">
                                     <form   name="formUtilisateur" action="" method="POST"  onsubmit=" return verifUtilisateur();">
                                         <table  align="center">
                                             <tr>
                                                 <td>
-                                                    <label for="nom" style="color:white";>Nom:</label>
+                                                    <label for="nom" >Nom:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="nom" id="nom" maxlength="20" value = "<?php echo $user->nom; ?>">
@@ -157,7 +188,7 @@ if(!isset($_SESSION["e"])){
 
                                             <tr>
                                                 <td>
-                                                    <label  for="prenom" style="color:white";>Prénom:</label>
+                                                    <label  for="prenom" ;>Prénom:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="prenom" id="prenom" maxlength="20" value = "<?php echo $user->prenom; ?>">
@@ -172,7 +203,7 @@ if(!isset($_SESSION["e"])){
                                             
                                             <tr>
                                                 <td>
-                                                    <label  for="email" style="color:white";>Adresse mail:</label>
+                                                    <label  for="email" >Adresse mail:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="email" name="email" id="email" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.fr|.+yahoo.com" value = "<?php echo $user->email; ?>">
@@ -181,7 +212,7 @@ if(!isset($_SESSION["e"])){
 
                                             <tr>
                                                 <td>
-                                                    <label  for="login" style="color:white";>Login:</label>
+                                                    <label  for="login" >Login:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="login" id="login" value = "<?php echo $user->login; ?>">
@@ -192,7 +223,7 @@ if(!isset($_SESSION["e"])){
 
                                             <tr>
                                                 <td>
-                                                    <label  for="pass" style="color:white";>Mot de passe:</label>
+                                                    <label  for="pass" >Mot de passe:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="password" name="pass" id="pass" value = "<?php echo $user->pass; ?>">
@@ -223,10 +254,28 @@ if(!isset($_SESSION["e"])){
                 </div>                         
             </div>
         </div>
+        <div class="mode">
+        Dark mode:             
+        <span class="change">OFF</span>
+    </div>
+      
+  
+      
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
         <?php
         }
         ?>
         
-<
+  
     </body>
 </html>

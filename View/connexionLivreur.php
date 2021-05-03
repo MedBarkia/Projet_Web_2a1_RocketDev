@@ -37,10 +37,41 @@ coup de chef  </title>
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-
+      <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+    <style>
+        body{
+        padding:10% 3% 10% 3%;
+        text-align:center;
+        }
+        img{
+            height:140px;
+                width:140px; 
+        }
+               .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
     </head>
 
     <body >
+     
+
         
 
         
@@ -49,13 +80,13 @@ coup de chef  </title>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
+                            <div class="">
+                                <div class="">
                                     <h4 class="text-center font-weight-light my-4">Espace Livreurs </h4>
                                      <h1> se connecter </h1>
 
                                 </div>
-                                <div class="card-body">
+                                <div class="">
                                     <form action="" method="POST">
                                         <table  align="center">
                                             <tr>
@@ -100,5 +131,23 @@ coup de chef  </title>
                 </div>                         
             </div>
         </div>
+           <div class="mode">
+        Dark mode:             
+        <span class="change">OFF</span>
+    </div>
+      
+  
+      
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
     </body>
 </html>           

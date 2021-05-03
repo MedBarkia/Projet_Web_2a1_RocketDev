@@ -237,15 +237,14 @@ coup de chef  </title>
 </div>
 
 <form name="formLivreur" action="" method="POST" onsubmit=" return verifLivreur();">
-    <table border="1" align="center">
+    <table  class="table">
 
         <tr>
-            <td rowspan='2' colspan='1'>Fiche Personnelle</td>
             <td>
                 <label for="nom">Nom:
                 </label>
             </td>
-            <td><input type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" >
+            <td><input class="form-control"  type="text" name="nom" id="nom" maxlength="20" required pattern="[A-Za-z\s]+" >
                                                 <div style=" color: red;" id="erreurNom"></div>
 </td>
         </tr>
@@ -256,12 +255,11 @@ coup de chef  </title>
                 <label for="prenom">Prenom:
                 </label>
             </td>
-            <td><input type="text" name="prenom" id="prenom" maxlength="20" required pattern="[A-Za-z\s]+" >
+            <td><input class="form-control"  type="text" name="prenom" id="prenom" maxlength="20" required pattern="[A-Za-z\s]+" >
                                     <div style=" color: red;" id="erreurPrenom"></div>
 </td>
         </tr>
         <tr>
-            <td rowspan='3' colspan='1'>Information de Connexion</td>
             
         </tr>
          <tr>
@@ -270,7 +268,7 @@ coup de chef  </title>
                 </label>
             </td>
             <td>
-                <input type="login" name="login" id="login">
+                <input class="form-control"  type="login" name="login" id="login">
                  <div style=" color: red;" id="erreurlogin"></div>
 
             </td>
@@ -281,7 +279,7 @@ coup de chef  </title>
                 </label>
             </td>
             <td>
-                <input type="password" name="pass" id="pass">
+                <input class="form-control"  type="password" name="pass" id="pass">
                          <div style=" color: red;" id="erreurpass"></div>
 
             </td>
@@ -290,10 +288,10 @@ coup de chef  </title>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Envoyer">
+                <input  class="btn btn-primary btn-block" type="submit"  value="Envoyer">
             </td>
             <td>
-                <input type="reset" value="Annuler" >
+                <input  class="btn btn-primary btn-block" type="reset" value="Annuler" >
             </td>
         </tr>
     </table>

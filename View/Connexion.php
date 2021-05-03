@@ -66,10 +66,7 @@ if (isset($_POST["email"]) &&
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <i class="icofont-phone"></i> +216 94 366 666
-        <i class="icofont-google-map"></i> tunis , araiana essoghra technopole ghazela
-      </div>
+     
      
     </div>
   </div>
@@ -77,13 +74,7 @@ if (isset($_POST["email"]) &&
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- The social media icon bar -->
-<div class="icon-bar">
-  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="google"><i class="fa fa-google"></i></a>
-  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-</div>
+
 
   <!-- Template Main CSS File -->
 
@@ -93,7 +84,38 @@ if (isset($_POST["email"]) &&
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+
+      <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+    <style>
+        body{
+        padding:10% 3% 10% 3%;
+        text-align:center;
+        }
+        img{
+            height:140px;
+                width:140px; 
+        }
+               .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+    </head>
 
 <body> 
         
@@ -114,7 +136,7 @@ if (isset($_POST["email"]) &&
   <header id="header" class="fixed-top">
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
-        <h1 class="logo mr-auto"><img src="../assets/img/logo.png" alt="" class="img-fluid"><a href="../addU.php">coup de chef</h1>
+        <h1 class="><img src="" alt="" class="img-fluid" ><a href="addU.php">coup de chef</h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="../home.php">Home</a></li>
@@ -123,7 +145,6 @@ if (isset($_POST["email"]) &&
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
-        <section></section>
           <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <div class="container">
@@ -131,7 +152,7 @@ if (isset($_POST["email"]) &&
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h1 class="text-center font-weight-light my-4">Se connecter </h1>
+                                    <h1 class="text-center font-weight-light my-4" >Se connecter </h1>
                                 </div>
                                 
                                 <div class="card-body">
@@ -139,7 +160,7 @@ if (isset($_POST["email"]) &&
                                         <table  align="center">
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="email">email:</label>
+                                                    <label class="small mb-1" for="email" >email:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="text" name="email" id="password" placeholder="Entrer l'email">
@@ -148,7 +169,7 @@ if (isset($_POST["email"]) &&
 
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="password">Mot de passe:</label>
+                                                    <label class="small mb-1" for="password"  >Mot de passe:</label>
                                                 </td>
                                                 <td>
                                                     <input class="form-control" type="password" name="pass" id="pass" placeholder="Entrer le mot de passe">
@@ -182,7 +203,24 @@ if (isset($_POST["email"]) &&
             </div>
         </div>
 
-
+  <div class="mode">
+        Dark mode:             
+        <span class="change">OFF</span>
+    </div>
+      
+  
+      
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
 
             
     <footer id="footer">
@@ -190,7 +228,6 @@ if (isset($_POST["email"]) &&
               <div class="container">
           <div class="row">
             <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Coup De Chef</h3>
             <p>
               ESPRIT <br>
               Ariana sghira, 2080<br>
@@ -200,23 +237,7 @@ if (isset($_POST["email"]) &&
             </p>
             </div>
             <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="../home.php">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="developement_p.html">Development Personelle</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="forum.php">Blog</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
-            </ul>
-            </div>
-            <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join As </h4>
-            <p>********************</p>
-            <form  method="post" action="subscribe.php">
-                <input  require type="email" name="subscribe" placeholder="Entrez votre adresse mail ici..."/>
-                <button type="submit">S'abonner</button>
-            </form>
-            </div>
+         
           </div>
           </div>
         </div>
@@ -232,14 +253,7 @@ if (isset($_POST["email"]) &&
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
           </div>
           </div>
-          <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          </div>
-        </div>
+         
         </footer>
         <!-- End Footer -->
         <div id="preloader"></div>
