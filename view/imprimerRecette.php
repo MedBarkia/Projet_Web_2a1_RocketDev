@@ -1,6 +1,7 @@
 <?php
     require "../controller/RecetteC.php";
     $controller = new RecetteController();
+
 ?>
 
 
@@ -26,6 +27,8 @@
     <link href="../coup de chef/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../coup de chef/assets/css/animate.css" rel="stylesheet">
     <link href="../coup de chef/assets/css/plugins.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="print.css" media="print">
+
 
     <!-- Custom CSS -->
     <link href="../coup de chef/assets/css/style.css" rel="stylesheet">
@@ -38,12 +41,11 @@
 
 <body id="page-top" class="regular-navigation">
 
-
     <div class="master-wrapper">
 
         <div class="preloader">
             <div class="preloader-img">
-                <span class="loading-animation animate-flicker"><img src="../coup de chef/assets/img/loading.GIF" alt="loading" /></span>
+            	<span class="loading-animation animate-flicker"><img src="../coup de chef/assets/img/loading.GIF" alt="loading" /></span>
             </div>
         </div>
 
@@ -93,82 +95,53 @@
         </div>
 
         <!-- Header -->
-        <header id="headerwrap" class="backstretched">
+        <header id="headerwrap" class="">
             <div class="container-fluid ">
                 <div class="vertical-center row">
                     <div class="col-sm-1 pull-left text-center slider-control match-height">
-                        <a href="#" class="prev-bs-slide vertical-center wow fadeInLeft" data-wow-delay="0.8s"><i class="fa fa-long-arrow-left"></i></a>
+                        <a href="#" class="prev-bs-slide vertical-center wow fadeInLeft"><i class="fa fa-long-arrow-left"></i></a>
                     </div>
-                    <div class="intro-text text-center smoothie col-sm-10 match-height">                    
-                        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.8s"><img src="../coup de chef/assets/img/recette.png" height="210" width="320"></div>              
+                    <div class="intro-text text-left smoothie col-sm-10 match-height">                    
+                        <div class="intro-heading wow fadeIn heading-font"><img src="../coup de chef/assets/img/logo/cdf.png" height="210" width="320"></div>              
                     </div>
                     <div class="col-sm-1 pull-right text-center slider-control match-height">
-                        <a href="#" class="next-bs-slide vertical-center wow fadeInRight" data-wow-delay="0.8s"><i class="fa fa-long-arrow-right"></i></a>
+                        <a href="#" class="next-bs-slide vertical-center wow fadeInRight"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section id="about" class="top-border-me">
+        <section id="about" style="border:0; ">
+
                 <div class="container">
                     <div class="row">
+
                         <div class=" text-center mb50">
-                         <h2> <span class="theme-accent-color">LES RECETTES DU CHEF</span></h2>                    
+                         <h2> <span class="theme-accent-color">Recette</span></h2>   
                         </div>
-                       <div class="row text-center" >
-                        <?php
-                            echo $controller->photoChef();
-                        ?>
+                        <div>
+                            <button onclick="window.print();" class="btn btn-danger btn-lg" id="print-btn" style="float: right;">Imprimer</button>
                         </div>
                     </div>
                 </div>   
+
                     <ul>
+                        
                         <?php
-                            echo $controller->triNbrPers();
+                            echo $controller->imprimerRecette();
                         ?>
                     </ul>
-
             </div>
         </section>
-
+        <br>
+        <br>
         <footer class="white-wrapper">
             <div class="container-fluid">
                 <div class="row text-center">
-                    <div class="col-md-12 wow fadeIn mb30" data-wow-delay="0.2s">
-                        <span class="mb30">Designed     by     RocketDev  </span>
-                    </div>
-                    <div class="col-md-12">
-                        <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                    <span class="mb30"><h5> © RocketDev  </h5> </span>
                 </div>
             </div>
         </footer>
-
-        <div id="bottom-frame"></div>
-
-        <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
-
-    </div>
-
     <script src="../coup de chef/assets/js/jquery.js"></script>
     <script src="../coup de chef/assets/js/bootstrap.min.js"></script>
     <script src="../coup de chef/assets/js/plugins.js"></script>
@@ -192,6 +165,7 @@
         ], {duration: 8000, fade: 500});
     });
     </script>
+        <div id="pageFooter"></div>
 
 </body>
 

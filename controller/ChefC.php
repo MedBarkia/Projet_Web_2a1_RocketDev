@@ -1,4 +1,5 @@
 <?php
+require_once '../config.php';
 require '../connection.php';
 require_once '../model/Chef.php';
 
@@ -62,15 +63,15 @@ class ChefController
 			);
 			$query->execute();
 			$result = $query->fetchAll(PDO::FETCH_CLASS, "Chef");
-			$table = '<table class="table">
+			$table = '<table class="table"  id="dataTable">
 					<thead class=" text-primary">
 						<tr>
 							<th>ID</th>
-							<th>Nom</th>
-							<th>Prénom</th>
-							<th>Date naissance</th>
-							<th>Nationalité</th>
-                            <th>Image du Chef</th>
+							<th>' . $GLOBALS['lang']["Nom"] . '</th>
+							<th>' . $GLOBALS['lang']["Prenom"] . '</th>
+							<th>' . $GLOBALS['lang']["Date_naissance"] . '</th>
+							<th>' . $GLOBALS['lang']["Nationalite"] . '</th>
+                            <th>' . $GLOBALS['lang']["Image"] . '</th>
                             <th></th>
                             <th></th>
 						</tr>
@@ -98,9 +99,9 @@ class ChefController
                 return "id not found";
             }
             else{
-              //  header('Location: ../view/afficherChef.php');
+              // header('Location: ../view/afficherChef.php');
               //  exit();
-                return "Chef supprimé avec succès";
+                return $GLOBALS['lang']['Msg'];
             }
         } catch (PDOException $e) {
             return $e->getMessage();
@@ -211,6 +212,69 @@ class ChefController
             return $e->getMessage();
         }
     }
+
+    public function rechercherChefForm()
+    {
+        $chef = new Chef();
+        return $chef->rechercherChefForm();
+    }
+
+    public function rechercherChef($nom)
+    {
+        $pdo = connection::getConnexion();
+        $nom = $_POST['rech'];
+        if (isset($_POST['rechercher'])) {
+            if (isset($nom)) {
+                try {
+                $query = $pdo->prepare(
+                    'SELECT * FROM chef WHERE nom_chef LIKE "'.$nom.'%"'
+                );
+                $query->execute();
+                $result = $query->fetchAll(PDO::FETCH_CLASS, "Chef");
+                $table = '<table class="table" >
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>ID</th>
+                                <th>' . $GLOBALS['lang']["Nom"] . '</th>
+                                <th>' . $GLOBALS['lang']["Prenom"] . '</th>
+                                <th>' . $GLOBALS['lang']["Date_naissance"] . '</th>
+                                <th>' . $GLOBALS['lang']["Nationalite"] . '</th>
+                                <th>' . $GLOBALS['lang']["Image"] . '</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>';
+                foreach ($result as $chef) {
+                    $table = $table . $chef->afficherChef();
+                }
+                $table = $table . "</table>";
+                return $table;
+                } catch (PDOException $e) {
+                    return $e->getMessage();
+                }
+            }
+        }
+    }
+
+
+    public function triDate(){
+        $pdo = connection::getConnexion();
+        try {
+        $query = $pdo->prepare(
+            'SELECT * FROM chef ORDER BY date_naissance desc'
+        );
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_CLASS, "Chef");
+        $liste = '';
+        foreach ($result as $chef) {
+            $liste = $liste . $chef->afficherChefCarte();
+        }
+        return $liste;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+
 
     public function uploadImg(){
         $target_dir = "../uploads/";

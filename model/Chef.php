@@ -1,4 +1,6 @@
 <?php
+require_once '../view/config.php';
+
 class Chef{
     private $id;
     private $nom_chef = null;
@@ -58,29 +60,29 @@ class Chef{
     public function ajouterChefForm(){
         return '<form name="formChef" onsubmit="return verifChef();" action="../view/ajouterChef.php" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nom">Nom du chef</label>
+                    <label class="bmd-label-floating" for="nom">' . $GLOBALS["lang"]["Nom"] . '</label>
                     <input class="form-control" type="text" id="nom" name="nom_chef" >
                     <div style="color: red;" id="erreurNom"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="prenom">Prenom du chef</label>
+                    <label class="bmd-label-floating" for="prenom">' . $GLOBALS["lang"]["Prenom"] . '</label>
                     <input class="form-control" type="text" id="prenom" name="prenom_chef">
                     <div style="color: red;" id="erreurPrenom"></div>
                   </div>
                   <div class="form-group">
-                    <label for="date_naissance">Date de naissance du chef</label>
+                    <label for="date_naissance">' . $GLOBALS["lang"]["Date_naissance"] . '</label>
                     <input class="form-control" type="date" id="date_naissance" name="date_naissance">
                     <div style="color: red;" id="erreurDate"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nationalite">Nationalite du chef</label>
+                    <label class="bmd-label-floating" for="nationalite">' . $GLOBALS["lang"]["Nationalite"] . '</label>
                     <input class="form-control" type="text" id="nationalite" name="nationalite">
                     <div style="color: red;" id="erreurNationalite"></div>
                   </div>
-                  <label class="bmd-label-floating">Photo du chef</label>
+                  <label class="bmd-label-floating">' . $GLOBALS["lang"]["Image"] . '</label>
                   <br>
                   <input type="file" name="fileToUpload" id="fileToUpload" accept="image/png,image/gif,image/jpeg,image/jpg">
-                  <input type="submit" name="submit" class="btn btn-primary pull-right" value="Ajouter">
+                  <input type="submit" name="submit" class="btn btn-primary pull-right" value="' . $GLOBALS["lang"]["Ajouter"] . '">
                   <button type="reset" class="btn btn-primary pull-right">Reset</button>
                 </form>';
     }
@@ -94,8 +96,8 @@ class Chef{
                   <td><FONT size='3pt'>". $this->date_naissance. "</FONT></td>
                   <td><FONT size='3pt'>". $this->nationalite. "</FONT></td>
                   <td> <img src='" . $this->image . "' class='img-responsive smoothie' alt='' border=3 height=150 width=300></img></td>
-                  <td><B><FONT size='3pt'><a href='../view/modifierChef.php?id=".$this->id."' >Modifier</a></B></FONT></td>
-                  <td><B><FONT size='3pt'><a href='../view/supprimerChef.php?id=".$this->id."' >Supprimer</a></B></FONT></td>
+                  <td><B><FONT size='3pt'><a href='../view/modifierChef.php?id=".$this->id."' >" . $GLOBALS['lang']['Modifier'] . "</a></B></FONT></td>
+                  <td><B><FONT size='3pt'><a href='../view/supprimerChef.php?id=".$this->id."' >" . $GLOBALS['lang']['Supprimer'] . "</a></B></FONT></td>
                 </tr>";
 
     }
@@ -104,31 +106,31 @@ class Chef{
         return '<form name="formChef" onsubmit="return verifChef();" action="../view/modifierChef.php?id=' . $this->id. '" method="POST" enctype="multipart/form-data">
                   <input id="id" name="id" type="hidden" value="'. $this->id. '">
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nom_u">Nom du chef</label>
+                    <label class="bmd-label-floating" for="nom_u">' . $GLOBALS["lang"]["Nom"] . '</label>
                     <input class="form-control" type="text" id="nom_u" name="nom_chef" value= "'. $this->nom_chef. '">
                     <div style="color: red;" id="erreurNom"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="prenom_u">Prenom du chef</label>
+                    <label class="bmd-label-floating" for="prenom_u">' . $GLOBALS["lang"]["Prenom"] . '</label>
                     <input class="form-control" type="text" id="prenom_u" name="prenom_chef" value= "'. $this->prenom_chef. '">
                     <div style="color: red;" id="erreurPrenom"></div> 
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="date_naissance_u">Date de naissance du chef</label>
+                    <label class="bmd-label-floating" for="date_naissance_u">' . $GLOBALS["lang"]["Date_naissance"] . '</label>
                     <input class="form-control" type="Date" id="date_naissance_u" name="date_naissance" value= "'. $this->date_naissance. '">
                     <div style="color: red;" id="erreurDate"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nationalite_u">Nationalite du chef</label>
+                    <label class="bmd-label-floating" for="nationalite_u">' . $GLOBALS["lang"]["Nationalite"] . '</label>
                     <input class="form-control" type="text" id="nationalite_u" name="nationalite" value= "'. $this->nationalite. '">
                     <div style="color: red;" id="erreurNationalite"></div>
                   </div>
-                  <label class="bmd-label-floating">Photo du chef</label>
+                  <label class="bmd-label-floating">' . $GLOBALS["lang"]["Image"] . '</label>
                   <br>
                   <input id="vielle_image" name="vielle_image" type="hidden" value="'. $this->image. '">
                   <img src="' . $this->image . '" class="img-responsive smoothie" alt="" height="500" width="300">
                   <input type="file" name="fileToUpload" id="fileToUploadd" accept="image/png,image/gif,image/jpeg,image/jpg">
-                  <input type="submit" name="modifier" class="btn btn-primary pull-right" value="Mettre à jour">
+                  <input type="submit" name="modifier" class="btn btn-primary pull-right" value="' . $GLOBALS["lang"]["Modifier"] . '">
                   <button type="reset" class="btn btn-primary pull-right">Reset</button>
               </form>';
     }
@@ -158,5 +160,18 @@ class Chef{
                 </div>
             </li>';
     }
+
+    public function rechercherChefForm(){
+      return '<form class="navbar-form" action="../view/rechercherChef.php" method="POST">
+                <div class="input-group no-border">
+                  <input type="search" name="rech" class="form-control" placeholder="' . $GLOBALS["lang"]["RecherchePlaceholder"] . '">
+                  <button type="submit" value="" name="rechercher" class="btn btn-white btn-round btn-just-icon">
+                    <i class="material-icons">search</i>
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+              </form>';
+    }
+
 }
 ?>

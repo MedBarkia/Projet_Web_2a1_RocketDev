@@ -1,4 +1,5 @@
 <?php 
+    require "config.php";
     require "../controller/ChefC.php";
     $controller = new ChefController();
 ?>
@@ -33,6 +34,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="../dashboard/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../dashboard/assets/demo/demo.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -57,37 +59,37 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item ">
             <a class="nav-link" href="./user.html">
               <i class="material-icons">person</i>
-              <p>Utilisateurs</p>
+              <p><?php echo $lang['Utilisateurs']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
+              <p>Reservations</p>
             </a>
           </li>
           <li class="nav-item active ">
             <a class="nav-link" href="afficherChef.php">
               <i class="material-icons">library_books</i>
-              <p>chefs</p>
+              <p>Chefs</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="afficherRecettes.php">
               <i class="material-icons">content_paste</i>
-              <p>recettes</p>
+              <p><?php echo $lang['Recettes']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./icons.html">
               <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
+              <p><?php echo $lang['Livraisons']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./map.html">
               <i class="material-icons">location_ons</i>
-              <p>evenements </p>
+              <p><?php echo $lang['Evennements']?> </p>
             </a>
           </li>
           <li class="nav-item ">
@@ -105,7 +107,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Typography</a>
+            <a class="navbar-brand" href="javascript:;"></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -114,15 +116,7 @@ The above copyright notice and this permission notice shall be included in all c
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form>
+           
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="javascript:;">
@@ -167,58 +161,46 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </nav>
       <!-- End Navbar -->
+      
       <div class="content">
         <div class="container-fluid">
-          <div class="card">
+          <div class="card" >
             <div class="card-header card-header-primary">
-              <h4 class="card-title" gras >La liste des Recettes</h4>
+              <h4 class="card-title" gras ><?php echo $lang['liste_chefs'] ?></h4>
+            </div>
+            
+            <div class="card-body">
+              <div>
+                <a href="afficherChef.php?lang=en"> <?php echo $lang['lang_en'] ?></a>
+                <a href="afficherChef.php?lang=fr"> <?php echo $lang['lang_fr'] ?></a>
+                <a class="btn btn-primary pull-right" href="ajouterChef.php"><?php echo $lang['Ajouter_Chef']?></a>
+              </div>
             </div>
             <div class="card-body">
-               <a class="btn btn-primary pull-right" href="ajouterChef.php">Ajouter un Chef</a>
-             <?php 
+              <?php 
+                echo $controller->rechercherChefForm();
+              ?>
+
+                <div class="input-group no-border" align="center">
+                    <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="ID chef" title="Type in a name"  >
+                      <style>
+                        #myInput {
+                        background: #d8d8d8;
+                        width: 250px;
+                        }
+
+                        input:focus::-webkit-input-placeholder {
+                        color: transparent;
+                        }
+                      </style>
+                </div>  
+              <?php 
                 echo $controller->afficherChefs();
-            ?>
+              ?>
             </div>
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
@@ -239,7 +221,7 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="clearfix"></div>
           </a>
         </li>
-        <li class="header-title">Images</li>
+        <li class="header-title"><?php echo $lang['Images']?></li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
             <img src="../dashboard/assets/img/sidebar-1.jpg" alt="">
@@ -288,6 +270,7 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script type="text/javascript" src="script.js" ></script>
   <script src="../dashboard/assets/js/core/jquery.min.js"></script>
   <script src="../dashboard/assets/js/core/popper.min.js"></script>
   <script src="../dashboard/assets/js/core/bootstrap-material-design.min.js"></script>
@@ -504,3 +487,4 @@ The above copyright notice and this permission notice shall be included in all c
 </body>
 
 </html>
+

@@ -96,18 +96,18 @@ class Recette{
     public function ajouterRecetteForm($option){
         return '<form name="formRecette" onsubmit="return verifRecette();" action="../view/ajouterRecette.php" method="POST" enctype="multipart/form-data">
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="id_chef">Nom du chef</label>
+                    <label class="col-sm-3 col-form-label" for="id_chef">' . $GLOBALS['lang']["nom_chef"] . '</label>
                     <div class="col-sm-9">
                     <select class="form-control" id="id_chef" name="id_chef" >' . $option . '</select>
                   </div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nom_recette">Nom de la recette</label>
+                    <label class="bmd-label-floating" for="nom_recette">' . $GLOBALS['lang']["nom_recette"] . '</label>
                     <input class="form-control" type="text" id="nom_recette" name="nom_recette" >
                     <div style="color: red;" id="erreurNomRecette"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="type_recette">Type de la recette</label>
+                    <label class="bmd-label-floating" for="type_recette">' . $GLOBALS['lang']["type"] . '</label>
                     <select class="form-control" type="select" id="type_recette" name="type_recette" >
                       <option value="Entrée">Entrée</option>
                       <option value="Plat">Plat</option>
@@ -115,12 +115,12 @@ class Recette{
                     </select>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating for="duree_recette">Durée de la recette</label>
+                    <label class="bmd-label-floating for="duree_recette">' . $GLOBALS['lang']["duree"] . '</label>
                     <input class="form-control" type="text" id="duree_recette" name="duree_recette" >
                     <div style="color: red;" id="erreurDuree"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="difficulte_recette">Difficulté de la recette</label>
+                    <label class="bmd-label-floating" for="difficulte_recette">' . $GLOBALS['lang']["difficulte"] . '</label>
                     <select class="form-control" type="select" id="difficulte_recette" name="difficulte_recette">
                       <option value="Facile">Facile</option>
                       <option value="Moyenne">Moyenne</option>
@@ -128,24 +128,24 @@ class Recette{
                     </select>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nbr_personnes">Nombres de personnes</label>
+                    <label class="bmd-label-floating" for="nbr_personnes">' . $GLOBALS['lang']["nbr_pers"] . '</label>
                     <input class="form-control" type="number" id="nbr_personnes" name="nbr_personnes">
                     <div style="color: red;" id="erreurNbr_Personnes"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="ingredients">Ingrédients de la recette</label>
+                    <label class="bmd-label-floating" for="ingredients">' . $GLOBALS['lang']["ingredients"] . '</label>
                     <textarea rows="5" cols="33" class="form-control" id="ingredients" name="ingredients"></textarea>
                     <div style="color: red;" id="erreurIngredients"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="preparation">Préparation de la recette</label>
+                    <label class="bmd-label-floating" for="preparation">' . $GLOBALS['lang']["preparation"] . '</label>
                     <textarea rows="5" cols="33" class="form-control" id="preparation" name="preparation"></textarea>
                     <div style="color: red;" id="erreurPreparation"></div>
                   </div>
-                  <label class="bmd-label-floating">Photo de la recette</label>
+                  <label class="bmd-label-floating">' . $GLOBALS['lang']["image_recette"] . '</label>
                   <br>
                   <input type="file" name="fileToUpload" id="fileToUpload_r" accept="image/png,image/gif,image/jpeg,image/jpg">
-                  <input type="submit" name="submit" class="btn btn-primary pull-right" value="Ajouter">
+                  <input type="submit" name="submit" class="btn btn-primary pull-right" value="' . $GLOBALS['lang']["Ajouter"] . '">
                   <button type="reset" class="btn btn-primary pull-right">Reset</button>
                 </form>';
     }
@@ -163,8 +163,8 @@ class Recette{
                   <td>". $this->ingredients. "</td>
                   <td>". $this->preparation. "</td>
                   <td> <img src='" . $this->image . "' class='img-responsive smoothie' alt='' border=3 height=100 width=200></img></td>
-                  <td><B><FONT size='3pt'><a href='../view/modifierRecette.php?id=".$this->id."' >Modifier</td>
-                  <td><B><FONT size='3pt'><a href='../view/supprimerRecette.php?id=".$this->id."' >Supprimer</td>
+                  <td><B><FONT size='3pt'><a href='../view/modifierRecette.php?id=".$this->id."' >" . $GLOBALS['lang']['Modifier'] . "</td>
+                  <td><B><FONT size='3pt'><a href='../view/supprimerRecette.php?id=".$this->id."' >" . $GLOBALS['lang']['Supprimer'] . "</td>
                 </tr>";
 
     }
@@ -174,12 +174,12 @@ class Recette{
                   <input id="id" name="id" type="hidden" value="'. $this->id. '">
                   <input id="id_chef" name="id_chef" type="hidden" value="'. $this->id_chef. '">
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nom_recette">Nom de la recette</label>
+                    <label class="bmd-label-floating" for="nom_recette">' . $GLOBALS['lang']["nom_recette"] . '</label>
                     <input class="form-control" type="text" id="nom_recette" name="nom_recette" value= "'. $this->nom_recette. '">
                     <div style="color: red;" id="erreurNomRecette"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="type_recette">Type de la recette</label>
+                    <label class="bmd-label-floating" for="type_recette">' . $GLOBALS['lang']["type"] . '</label>
                     <select class="form-control" id="type_recette" name="type" >
                       <option value="Entrée" ' . ($this->type == 'Entrée' ? ' selected="selected"' : '') . '>Entrée</option>
                       <option value="Plat" ' . ($this->type == 'Plat' ? ' selected="selected"' : '') . '>Plat</option>
@@ -187,12 +187,12 @@ class Recette{
                     </select>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="duree">Durée</label>
+                    <label class="bmd-label-floating" for="duree">' . $GLOBALS['lang']["duree"] . '</label>
                     <input class="form-control" type="text" id="duree" name="duree_recette" value= "'. $this->duree. '">
                     <div style="color: red;" id="erreurDuree"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="difficulte">Difficulté de la recette</label>
+                    <label class="bmd-label-floating" for="difficulte">' . $GLOBALS['lang']["difficulte"] . '</label>
                       <select class="form-control" id="difficulte" name="difficulte_recette">
                         <option value="Facile" ' . ($this->difficulte == 'Facile' ? ' selected="selected"' : '') . '>Facile</option>
                         <option value="Moyenne" ' . ($this->difficulte == 'Moyenne' ? ' selected="selected"' : '') . '>Moyenne</option>
@@ -200,35 +200,34 @@ class Recette{
                       </select>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="nbr_personnes">Nombres de personnes</label>
+                    <label class="bmd-label-floating" for="nbr_personnes">' . $GLOBALS['lang']["nbr_pers"] . '</label>
                     <input class="form-control" type="number" id="nbr_personnes" name="nbr_personnes" value="' . $this->nbr_personnes . '">
                     <div style="color: red;" id="erreurNbr_Personnes"></div>
                   </div>                
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="ingredients">Ingrédients de la recette</label>
+                    <label class="bmd-label-floating" for="ingredients">' . $GLOBALS['lang']["ingredients"] . '</label>
                     <textarea rows="5" cols="33" class="form-control" id="ingredients" name="ingredients" >' . $this->ingredients . '</textarea>
                     <div style="color: red;" id="erreurIngredients"></div>
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating" for="preparation">Préparation de la recette</label>
+                    <label class="bmd-label-floating" for="preparation">' . $GLOBALS['lang']["preparation"] . '</label>
                     <textarea rows="5" cols="33" class="form-control" id="preparation" name="preparation" >' . $this->preparation . '</textarea>
                    <div style="color: red;" id="erreurPreparation"></div>
                   </div>
-                  <label class="bmd-label-floating">Photo du chef</label>
+                  <label class="bmd-label-floating">' . $GLOBALS['lang']["image_recette"] . '</label>
                   <br>
                   <input id="vielle_image" name="vielle_image" type="hidden" value="'. $this->image. '">
                   <img src="' . $this->image . '" class="img-responsive smoothie" alt="" height="500" width="300">
                   <input type="file" name="fileToUpload" id="fileToUploadd" accept="image/png,image/gif,image/jpeg,image/jpg">
-                  <input type="submit" name="update" class="btn btn-primary pull-right" value="Mettre à jour">
+                  <input type="submit" name="update" class="btn btn-primary pull-right" value="' . $GLOBALS['lang']["Modifier"] . '">
                   <button type="reset" class="btn btn-primary pull-right">Reset</button>
               </form>';
     }
 
 
     public function afficherRecetteChef(){
-      return '
-               <div class="col-xs-3">
-                  <img src="' . $this->image . '" class="img-responsive smoothie" alt="" height="50" width="300"><br><br>
+      return '<div class="col-xs-3">
+                  <img src="' . $this->image . '" class="img-responsive smoothie" alt="" height="50" width="300"><br>
               </div>
               <div class="container">
                   <div class="row">
@@ -236,13 +235,40 @@ class Recette{
                           <h2 <span class="theme-accent-color">'. $this->nom_recette .'</span></h2>
                           <p class="lead"><B>Type de la recette:</B> '.$this->type.'<br><B>Pour: </B>' . $this->nbr_personnes . ' Personnes<br><B> Durée: </B>' . $this->duree . '<br> <B> Difficulté: </B>' . $this->difficulte . ' <br><B>Ingrédients: </B>' . $this->ingredients . ' <br><B>Préparation: </B> ' . $this->preparation. '</p>
                       </div>
+                      <div>
+                        <a href="../view/imprimerRecette.php?id='.$this->id.'" class="btn btn-warning btn-lg">Imprimer la recette</a>
+                      </div>
                   </div>
               </div>
-              <hr style="height:1px;border-width:0;color:orange;background-color:orange">';
+              <hr align="left" width="60%" style="height:1px;border-width:0;color:orange;background-color:orange">';
     }
 
+    public function afficherRecetteImpression(){
+      return '<div class="col-xs-3">
+                <img src="' . $this->image . '"  alt="" height="300" width="400"><br><br>
+              </div>
 
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-5 col-md-offset-1" class="text-align">
+                          <h2 <span class="theme-accent-color">'. $this->nom_recette .'</span></h2>
+                          <p class="lead"><B>Type de la recette:</B> '.$this->type.'<br><B>Pour: </B>' . $this->nbr_personnes . ' Personnes<br><B> Durée: </B>' . $this->duree . '<br> <B> Difficulté: </B>' . $this->difficulte . ' <br><B>Ingrédients: </B>' . $this->ingredients . ' <br><B>Préparation: </B> ' . $this->preparation. ' </p><br><br><br>
+                      </div>
+                  </div>
+              </div>';
+    }
 
+    public function rechercherRecetteForm(){
+      return '<form class="navbar-form" action="../view/rechercherRecette.php" method="POST">
+                <div class="input-group no-border">
+                  <input type="search" name="rech" class="form-control" placeholder="' . $GLOBALS["lang"]["RechercherPlaceholder"] . '">
+                  <button type="submit" value="" name="rechercher" class="btn btn-white btn-round btn-just-icon">
+                    <i class="material-icons">search</i>
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+              </form>';
+    }
 
   }
 

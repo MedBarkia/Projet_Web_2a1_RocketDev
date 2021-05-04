@@ -1,7 +1,6 @@
 <?php 
     require "../controller/RecetteC.php";
     $controller = new RecetteController();
-    $e = $controller->ajouterRecette();
 ?>
 
 <!--
@@ -70,10 +69,10 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item ">
             <a class="nav-link" href="afficherChef.php">
               <i class="material-icons">library_books</i>
-              <p>chefs </p>
+              <p>chefs</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item active">
             <a class="nav-link" href="afficherRecettes.php">
               <i class="material-icons">content_paste</i>
               <p><?php echo $lang['Recettes']?></p>
@@ -172,12 +171,18 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title"><?php echo $lang['ajouter_recette'] ?></h4>
+              <h4 class="card-title" gras ><?php echo $lang['liste_recettes'] ?></h4>
             </div>
             <div class="card-body">
-             <?php  
-                echo $controller->ajouterRecetteForm();
-                echo $e;
+                <a class="btn btn-primary pull-right" href="ajouterRecette.php"><?php echo $lang['ajouter_recette'] ?></a>
+              <button class="btn btn-primary pull-right" onclick="darkMode()">Dark/Light mode</button>
+            </div>
+            <div class="card-body">
+              <?php 
+                echo $controller->rechercherRecetteForm();
+              ?>
+             <?php 
+                echo $controller->rechercherRecette($_POST['rech']);
             ?>
             </div>
           </div>
@@ -254,7 +259,6 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script type="text/javascript" src="script.js"></script>
   <script src="../dashboard/assets/js/core/jquery.min.js"></script>
   <script src="../dashboard/assets/js/core/popper.min.js"></script>
   <script src="../dashboard/assets/js/core/bootstrap-material-design.min.js"></script>
@@ -267,13 +271,13 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../dashboard/assets/js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
   <script src="../dashboard/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
   <script src="../dashboard/assets/js/plugins/bootstrap-selectpicker.js"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="../dashboard/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
   <script src="../dashboard/assets/js/plugins/jquery.dataTables.min.js"></script>
-  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <!--  Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="../dashboard/assets/js/plugins/bootstrap-tagsinput.js"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
   <script src="../dashboard/assets/js/plugins/jasny-bootstrap.min.js"></script>

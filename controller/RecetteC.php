@@ -1,4 +1,5 @@
 <?php
+require_once '../config.php';
 require '../connection.php';
 require '../model/Recette.php';
 require_once '../model/Chef.php';
@@ -92,6 +93,30 @@ class RecetteController
         }
     }
 
+    public function photoChef() {
+        $pdo = connection::getConnexion();
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            try {
+                $query = $pdo->prepare(
+                    'SELECT * FROM chef WHERE id = :id'
+                );
+                $query->execute([
+                    'id' => $id
+                ]);
+                $result = $query->fetchAll(PDO::FETCH_CLASS, "Chef");
+                $photo = '';
+                foreach ($result as $chef) {
+                    $photo = '<img src="' . $chef->getImage() . '" class="center" alt="" height="320" width="560">
+                    <h6 class="lead"><B> '.$chef->getNom().' ' .$chef->getPrenom() . '</B>';
+                }
+                return $photo;
+            } catch (PDOException $e) {
+                return $e->getMessage();
+            }
+        }
+    }
+
 
     public function afficherRecettes(){    
         $pdo = connection::getConnexion();
@@ -105,15 +130,15 @@ class RecetteController
                     <thead class=" text-primary">
                         <tr>
                             <th>ID</th>
-                            <th>ID de chef</th>                            
-                            <th>Nom</th>
-                            <th>Type</th>
-                            <th>Durée</th>
-                            <th>Difficulté</th>
-                            <th>Nombres de personnes</th>
-                            <th>Ingrédients</th>
-                            <th>Préparation</th>
-                            <th>Image de la recette</th>
+                            <th>ID chef</th>                            
+                            <th>' . $GLOBALS['lang']["nom_recette"] . '</th>
+                            <th>' . $GLOBALS['lang']["type"] . '</th>
+                            <th>' . $GLOBALS['lang']["duree"] . '</th>
+                            <th>' . $GLOBALS['lang']["difficulte"] . '</th>
+                            <th>' . $GLOBALS['lang']["nbr_pers"] . '</th>
+                            <th>' . $GLOBALS['lang']["ingredients"] . '</th>
+                            <th>' . $GLOBALS['lang']["preparation"] . '</th>
+                            <th>' . $GLOBALS['lang']["image_recette"] . '</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -145,7 +170,7 @@ class RecetteController
             else{
               //  header('Location: ../view/afficherRecettes.php');
               //  exit();
-                return "Recette supprimé avec succès";
+                return $GLOBALS['lang']['MsgSupp'];
             }
         } catch (PDOException $e) {
             return $e->getMessage();
@@ -178,7 +203,7 @@ class RecetteController
             }
         }
         else{
-            return "aucun id trouvé";
+            return "id not found";
         }
     }
 
@@ -276,7 +301,76 @@ class RecetteController
         }
     }
 
-    public function triType(){
+    public function imprimerRecette(){
+        $pdo = connection::getConnexion();
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            try {
+            $query = $pdo->prepare(
+                'SELECT * FROM recette where id = :id'
+            );
+            $query->execute([
+                'id' => $id
+            ]);
+            $result = $query->fetchAll(PDO::FETCH_CLASS, "Recette");
+            $liste = '';
+            foreach ($result as $recette) {
+                $liste = $liste . $recette->afficherRecetteImpression();
+            }
+            return $liste;
+            } catch (PDOException $e) {
+                return $e->getMessage();
+            }
+        }
+        else{
+            return "aucun id trouvé";
+        }
+    }
+
+
+    public function rechercherRecetteForm()
+    {
+        $recette = new Recette();
+        return $recette->rechercherRecetteForm();
+    }
+
+    public function rechercherRecette($nom){
+        $pdo = connection::getConnexion();
+        try {
+            $query = $pdo->prepare(
+                'SELECT * FROM recette WHERE nom_recette LIKE "'.$nom.'%"'
+            );
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_CLASS, "Recette");
+            $table = '<table class="table">
+                    <thead class=" text-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>ID chef</th>                            
+                            <th>' . $GLOBALS['lang']["nom_recette"] . '</th>
+                            <th>' . $GLOBALS['lang']["type"] . '</th>
+                            <th>' . $GLOBALS['lang']["duree"] . '</th>
+                            <th>' . $GLOBALS['lang']["difficulte"] . '</th>
+                            <th>' . $GLOBALS['lang']["nbr_pers"] . '</th>
+                            <th>' . $GLOBALS['lang']["ingredients"] . '</th>
+                            <th>' . $GLOBALS['lang']["preparation"] . '</th>
+                            <th>' . $GLOBALS['lang']["image_recette"] . '</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>';
+            foreach ($result as $recette) {
+                $table = $table . $recette->afficherRecetteForm();
+            }
+            $table = $table . "</table>";
+            return $table;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+
+
+    public function triNbrPers(){
         $pdo = connection::getConnexion();
         if (isset($_GET['id'])) {
             $chef_id = $_GET['id'];

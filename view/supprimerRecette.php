@@ -65,13 +65,13 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item ">
             <a class="nav-link" href="./user.html">
               <i class="material-icons">person</i>
-              <p>Utilisateurs</p>
+              <p><?php echo $lang['Utilisateurs']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
+              <p>Reservations</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -83,19 +83,19 @@ The above copyright notice and this permission notice shall be included in all c
            <li class="nav-item active">
             <a class="nav-link" href="afficherRecettes.php">
               <i class="material-icons">content_paste</i>
-              <p>recettes</p>
+              <p><?php echo $lang['Recettes']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./icons.html">
               <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
+              <p><?php echo $lang['Livraisons']?></p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./map.html">
               <i class="material-icons">location_ons</i>
-              <p>evenements </p>
+              <p><?php echo $lang['Evennements']?> </p>
             </a>
           </li>
           <li class="nav-item ">
@@ -113,7 +113,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Typography</a>
+            <a class="navbar-brand" href="javascript:;"></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -179,53 +179,18 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Chefs et recettes</h4>
+              <h4 class="card-title"><?php echo $lang['liste_recettes']?></h4>
             </div>
             <div class="card-body">
              <?php  
                echo $e;
             ?>
             <br>
-            <a class="btn btn-primary" href="afficherRecettes.php">Retourner</a>
+            <a class="btn btn-primary" href="afficherRecettes.php"><?php echo $lang['Retourner'] ?></a>
             </div>
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
   <div class="fixed-plugin">

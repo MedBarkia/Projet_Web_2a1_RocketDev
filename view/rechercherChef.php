@@ -1,7 +1,11 @@
 <?php 
-    require "../controller/RecetteC.php";
-    $controller = new RecetteController();
-    $e = $controller->ajouterRecette();
+    require "../controller/ChefC.php";
+    $controller = new ChefController();
+    if(empty($_POST['rech'])){
+      header("Location: ./afficherChef.php");
+      exit();
+    }
+    
 ?>
 
 <!--
@@ -34,11 +38,26 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="../dashboard/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../dashboard/assets/demo/demo.css" rel="stylesheet" />
+  <style>
+    body {
+    padding: 25px;
+    color: black;
+    font-size: 25px;
+    }
+    div {
+
+    }
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+</style>
 </head>
 
-<body class="">
+<body >
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../dashboard/assets/img/sidebar-1.jpg">
+    <div id="wey" class="sidebar" name="dorsaf" data-color="purple" data-image="../dashboard/assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -67,13 +86,13 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Reservations</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" href="afficherChef.php">
               <i class="material-icons">library_books</i>
-              <p>chefs </p>
+              <p>chefs</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="afficherRecettes.php">
               <i class="material-icons">content_paste</i>
               <p><?php echo $lang['Recettes']?></p>
@@ -172,12 +191,20 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title"><?php echo $lang['ajouter_recette'] ?></h4>
+              <h4 class="card-title" gras ><?php echo $lang['liste_chefs'] ?></h4>
+            </div>
+
+            <div class="card-body">
+                <a class="btn btn-primary pull-right" href="ajouterChef.php"><?php echo $lang['Ajouter_Chef']?></a>
+              <button class="btn btn-primary pull-right" onclick="darkMode()">Dark/Light mode</button>
             </div>
             <div class="card-body">
-             <?php  
-                echo $controller->ajouterRecetteForm();
-                echo $e;
+              <?php 
+                echo $controller->rechercherChefForm();
+              ?>
+            </div>
+             <?php 
+                  echo $controller->rechercherChef($_POST['rech']);
             ?>
             </div>
           </div>

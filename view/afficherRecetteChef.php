@@ -1,6 +1,7 @@
 <?php
     require "../controller/RecetteC.php";
     $controller = new RecetteController();
+
 ?>
 
 
@@ -33,7 +34,27 @@
     <!-- Custom Fonts -->
     <link href="../coup de chef/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../coup de chef/assets/css/pe-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="print.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        body{
+        }
+        .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            padding: 5px;
+            margin-left: 1px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
 </head>
 
 <body id="page-top" class="regular-navigation">
@@ -108,25 +129,27 @@
                 </div>
             </div>
         </header>
-
-        <section id="about" class="top-border-me">
                 <div class="container">
-                    <div class="row">
+                    <div class="mode">
+                        Dark mode:             
+                        <span class="change">OFF</span>
+                    </div>
+                    <div class="row"> 
                         <div class=" text-center mb50">
                          <h2> <span class="theme-accent-color">LES RECETTES DU CHEF</span></h2>   
                         </div>
+                        <div class="row text-center" >
+                        <?php
+                            echo $controller->photoChef();
+                        ?>
+                        </div>
                     </div>
                 </div>   
-                <li>
                     <ul>
                         <?php
-                           echo $controller->afficherRecetteChef();
+                            echo $controller->afficherRecetteChef();
                         ?>
                     </ul>
-                </li>
-
-            </div>
-        </section>
 
         <footer class="white-wrapper">
             <div class="container-fluid">
@@ -165,7 +188,6 @@
         <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
 
     </div>
-
     <script src="../coup de chef/assets/js/jquery.js"></script>
     <script src="../coup de chef/assets/js/bootstrap.min.js"></script>
     <script src="../coup de chef/assets/js/plugins.js"></script>
@@ -189,7 +211,17 @@
         ], {duration: 8000, fade: 500});
     });
     </script>
-
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@ function verifChef() {
     var nom = formChef.nom_chef.value;
     var prenom = formChef.prenom_chef.value;
     var nationalite = formChef.nationalite.value;
-    var letters = /^[A-Za-z]+$/;
+    var letters = /^[A-Za-z\s]*$/;
     if(nom.charAt(0) != nom.charAt(0).toUpperCase())
     {     
     	document.getElementById('erreurNom').innerHTML = "Le nom doit commencer par une lettre Majuscule";
@@ -119,9 +119,29 @@ function verifRecette(){
     else{
         document.getElementById('erreurPreparation').innerHTML = "";
     }
-
-
     return (!erreur);
+}
 
+function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dataTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
 
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
 }

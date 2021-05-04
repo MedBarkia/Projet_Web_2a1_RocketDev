@@ -1,6 +1,7 @@
 <?php
     require "../controller/ChefC.php";
     $controller = new ChefController();
+
 ?>
 
 
@@ -674,7 +675,7 @@
        
 
         <section id="Book" class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../coup de chef/assets/img/bg/bg4.jpg" data-speed="0.8">
-            <div class="section-inner">
+           <div class="section-inner">
                  <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center mb30">
@@ -685,14 +686,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="wow fadeIn" data-wow-delay="0.2s">
+
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12">
                                 <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
                                     <?php
-                                    echo $controller->afficherChefCarte();
+                                        echo $controller->triDate();
                                     ?>
                                 </ul>
                             </div>
@@ -700,7 +701,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../coup de chef/assets/img/bg/bg10.jpg" data-speed="0.8">
