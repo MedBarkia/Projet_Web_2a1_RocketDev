@@ -1,4 +1,5 @@
 <?php 
+    require_once '../config.php';
     require "../controller/RecetteC.php";
     $controller = new RecetteController();
 ?>

@@ -131,6 +131,7 @@
                             echo $controller->imprimerRecette();
                         ?>
                     </ul>
+                    <br>
             </div>
         </section>
         <br>

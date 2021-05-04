@@ -1,5 +1,4 @@
 <?php
-require_once '../view/config.php';
 
 class Chef{
     private $id;
@@ -95,7 +94,7 @@ class Chef{
                   <td><FONT size='3pt'>" . $this->prenom_chef. "</FONT></td>
                   <td><FONT size='3pt'>". $this->date_naissance. "</FONT></td>
                   <td><FONT size='3pt'>". $this->nationalite. "</FONT></td>
-                  <td> <img src='" . $this->image . "' class='img-responsive smoothie' alt='' border=3 height=150 width=300></img></td>
+                  <td> <img src='" . $this->image . "' class='img-responsive smoothie' alt='' border=3 height=200 width=300></img></td>
                   <td><B><FONT size='3pt'><a href='../view/modifierChef.php?id=".$this->id."' >" . $GLOBALS['lang']['Modifier'] . "</a></B></FONT></td>
                   <td><B><FONT size='3pt'><a href='../view/supprimerChef.php?id=".$this->id."' >" . $GLOBALS['lang']['Supprimer'] . "</a></B></FONT></td>
                 </tr>";

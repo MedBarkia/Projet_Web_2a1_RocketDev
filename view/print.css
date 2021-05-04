@@ -12,7 +12,11 @@
 #pageFooter {
     
 }
-
+#trap
+{
+  display: none;
+  visibility: none;
+}
 
   a[href]:after {
     content: none !important;

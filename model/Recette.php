@@ -1,4 +1,5 @@
 <?php
+
 class Recette{
     private $id;
     private $id_chef;
@@ -255,6 +256,8 @@ class Recette{
                           <p class="lead"><B>Type de la recette:</B> '.$this->type.'<br><B>Pour: </B>' . $this->nbr_personnes . ' Personnes<br><B> Durée: </B>' . $this->duree . '<br> <B> Difficulté: </B>' . $this->difficulte . ' <br><B>Ingrédients: </B>' . $this->ingredients . ' <br><B>Préparation: </B> ' . $this->preparation. ' </p><br><br><br>
                       </div>
                   </div>
+                  <br>
+                <a href="../view/afficherRecetteChef.php?id='.$this->id_chef.'" class="btn btn-warning btn-lg" id="trap" style="float: right;">Afficher toutes les recettes</a>
               </div>';
     }
 

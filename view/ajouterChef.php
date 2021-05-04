@@ -1,5 +1,4 @@
 <?php 
-    require "config.php";
     require "../controller/ChefC.php";
     $controller = new ChefController();
     $e = $controller->ajouterChef();
