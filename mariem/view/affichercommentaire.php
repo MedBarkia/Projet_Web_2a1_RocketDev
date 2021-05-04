@@ -1,18 +1,17 @@
 <?PHP
-    include "../controller/commentaireC.php";
+    include "../controller/comment.php";
+    include "../controller/rest.php";
     $num=$_POST['num'];
-    $commentaireC=new commentaireC();
-    $listecomm=$commentaireC->affichercommentaire($num);
+    $comment=new comment();
+    $listecomm=$comment->affichercommentaire($num);
+    $rest=new rest();
+    $listerestau=$rest->afficherproduit1($num);
 
 ?>
 
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Afficher Liste restaurants </title>
-    </head>
+   
     <body>
         
 
@@ -21,28 +20,57 @@
         <form action="" method="post">
         <table >
             <tr>
-                <th>commentaire</th>
+                <br>
             
             </tr>
 
             <?PHP
                 foreach($listecomm as $commentaire){
+                    foreach($listerestau as $restau){
+                        if( $restau['num'] == $commentaire['num']){
             ?>
                 <tr>
-    
-                    <td><?PHP echo $commentaire['commentaire']; ?></td>
+                    <td><img src="image/<?PHP echo $restau['photo']; ?>" width="200" height="200"></td>
+                   
                     
+                </tr>
+                <?PHP
+                foreach($listecomm as $commentaire){
+            
+                        
+            ?>
+
+
+                <tr>
+                <td><?PHP echo $commentaire['commentaire']; ?></td>
                 </tr>
                 <tr>
                 <td>
                 <form method="POST" action="supprimerr.php">
-                        <input type="submit" name="supprimer" value="supprimer">
+                        <input type="submit"   name="supprimer" value="supprimer">
                         <input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
                         </form></td>
                 </tr>
-            <?PHP
-                }
-            ?>
+                
+             <?PHP
+                
+        }
+
+
+
+?>
+                <?PHP
+                
+            }
+        }
+    }
+        
+
+
+
+?>
+
+
         </table>
         </form>
     </body>

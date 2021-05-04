@@ -70,6 +70,7 @@
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">restaurant</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="commentairerestau.php">restaurant</a>
+                             
                                 
 
 								

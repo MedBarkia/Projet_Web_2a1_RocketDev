@@ -102,13 +102,13 @@ if (
             </a>
           </li>
           <li class="nav-item active ">
-            <a class="nav-link" href="./formulaire.php">
+            <a class="nav-link" href="./user.html">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./table.php">
+            <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
               <p>Restaurant</p>
             </a>
@@ -215,13 +215,10 @@ if (
                   <p class="card-category">ajouter un restaurant</p>
                 </div>
                 <div class="card-body">
-
-                
-                  <form action="" name="myForm"  method="POST" enctype="multipart/form-data">
-                     
+                  <form action="" method="POST" enctype="multipart/form-data">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label for="num" class="bmd-label-floating">Num</label>
+                          <label for="adresse" class="bmd-label-floating">Num</label>
                           <input type="text" class="form-control" name="num" id="num" >
                         </div>
                       </div>
@@ -271,8 +268,7 @@ if (
                     <div class="clearfix"></div>
                     <input class="btn btn-primary" type="reset" value="quitter">
                   </form>
-                  <script src="controlsaisie.js"></script>
-                  
+
                 </div>
               </div>
             </div>
@@ -615,8 +611,6 @@ if (
       });
     });
   </script>
- 
-
 </body>
 
 </html>

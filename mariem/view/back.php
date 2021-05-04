@@ -53,13 +53,13 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./table.php">
-              <i class="material-icons">food bank</i>
+            <a class="nav-link" href="./tablerestau.php">
+              <i class="material-icons">restaurant</i>
               <p>Restaurant</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./commentaire.php">
+            <a class="nav-link" href="./tablecommentaire.php">
               <i class="material-icons">content_paste</i>
               <p>commentaire</p>
             </a>
@@ -537,7 +537,7 @@
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
-                    
+                      
                 </div>
               </div>
             </div>

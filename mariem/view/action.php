@@ -1,21 +1,29 @@
-<?PHP
-    include_once '../model/commentaire.php';
-    include "../controller/commentaireC.php";
-$num=$_POST['num'];
+<?php
+ include "../controller/comment.php";
+ include "../controller/rest.php";
 $idclient=$_POST['idclient'];
-$commentaire=$_POST['commentaire'];
-$commentaireC=new commentaireC();
-$commentaireC->ajoutercomm($num,$idclient,$commentaire);
-$listerestau=$commentaireC->afficherproduit1($num);
-$listecomm=$commentaireC->affichercommentaire($num,$idclient);
-$listecommm=$commentaireC->afficherclient($idclient);
-        
-        
-   
+$num=$_POST['num'];
+$sql =" INSERT INTO liike (idclient,num) values ('$idclient', '$num')";
+ $db = config::getConnexion();
+ $req = $db->prepare($sql);
+ $req->execute();
+$comment=new comment();
+$listecomm=$comment->affichercommentairee($num);
+$listec=$comment->affichercommentairee($num);
 
+$rest=new rest();
+$listerestau=$rest->afficherproduit1($num);
 
 
 ?>
+<?php
+
+$sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
+ $db = config::getConnexion();
+ $req = $db->prepare($sql);
+ $req->execute();
+?>
+
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -118,85 +126,55 @@ $listecommm=$commentaireC->afficherclient($idclient);
 												<br>
 											
 											</tr>
-
+                                            
 											<?PHP
 												foreach($listecomm as $commentaire){
 													foreach($listerestau as $restau){
-														
 														//if( $restau['num'] == $commentaire['num']){
 											?>
 												<tr>
-													<tr><img src="image/<?PHP echo $restau['photo']; ?>" width="700" height="200"></tr>
-													<tr>
-
-											         	<form method="POST" action="action.php">
-														<input type="submit"   name="like" value="like">
-														<input type="hidden" value=<?PHP echo $commentaire['idclient']; ?> name="idclient">
-														<input type="hidden" value=<?PHP echo $commentaire['num']; ?> name="num">
-														<input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
-														</form>
-														
-														</tr>
+													<td><img src="image/<?PHP echo $restau['photo']; ?>" width="700" height="200">
 													<?php
-													//$commenta=new commentaireC();
-													//$listerestau=$rest->afficheelike($num);
+													$rest=new rest();
+													$listerestau=$rest->afficheelike($num);
 													?>
+                                                   <form method="POST" action="dislike.php">
+														<input type="submit"   name="like" value="dislike">
+														<input type="hidden" value=<?PHP echo $_POST['idclient']; ?> name="idclient">
+														<input type="hidden" value=<?PHP echo $_POST['num']; ?> name="num">
+                                                   </form>
+												</td>
+												    
+													
+												</tr>
+                                                
+
 												
-												    <td>
-													
-													</td>
-													
-												</tr>
-												<?PHP
-												foreach($listecommm as $like){
-											
-														
-											?>	<tr>
-										            	
-											</tr>
-											<?PHP
-                                                }
-
-                                        ?>
-
-												<?PHP
-												foreach($listecommm as $client){
-											
-														
-											?>	
-												<tr>
-												<td><?PHP echo $client['nom']; ?>
-												<?PHP echo $client['prenom']; ?></td>
-												</tr>
-												<?PHP
-                                                }
-
-                                        ?>
+												
 
 												<?PHP
 												foreach($listecomm as $commentaire){
+											
 														
 											?>
 
-
 												<tr>
-												<td><?PHP echo $commentaire['commentaire']; ?></td>
-												</tr>
-												
 												<td>
+												<h4>	<?PHP echo $commentaire['nom']; ?>
+												<?PHP echo $commentaire['prenom']; ?> :
+												<h6><?PHP echo $commentaire['commentaire']; ?></h6>
+												</h4>
 
-												<form method="POST" action="supprimerr.php">
-														<input type="submit"   name="supprimer" value="supprimer">
-														<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
-														</form></td>
+												</td>
 											
+												
+												</tr>
+												<tr>
+												<td>
+												
 											    <td>
 												  
-													<form method="POST" action="modifier.php">
-													<input type="submit" name="modifier" value="modifier" >
-													<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
 													
-												    </form>
 												</td>
 													
                                             </tr>
@@ -204,7 +182,7 @@ $listecommm=$commentaireC->afficherclient($idclient);
 											
 											
                                 
-											
+										
 
                                         
                                        

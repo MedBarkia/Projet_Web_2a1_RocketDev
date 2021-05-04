@@ -1,21 +1,16 @@
 <?PHP
-    include_once '../model/commentaire.php';
-    include "../controller/commentaireC.php";
-$num=$_POST['num'];
-$idclient=$_POST['idclient'];
-$commentaire=$_POST['commentaire'];
-$commentaireC=new commentaireC();
-$commentaireC->ajoutercomm($num,$idclient,$commentaire);
-$listerestau=$commentaireC->afficherproduit1($num);
-$listecomm=$commentaireC->affichercommentaire($num,$idclient);
-$listecommm=$commentaireC->afficherclient($idclient);
-        
-        
-   
+    include "../controller/comment.php";
+    include "../controller/rest.php";
+    $num=$_POST['num'];
+    $comment=new comment();
+   // $listecomm=$comment->affichercommentaire($num);
+	$listecomm=$comment->affichercommentairee($num);
 
-
+    $rest=new rest();
+    $listerestau=$rest->afficherproduit1($num);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -122,81 +117,50 @@ $listecommm=$commentaireC->afficherclient($idclient);
 											<?PHP
 												foreach($listecomm as $commentaire){
 													foreach($listerestau as $restau){
-														
 														//if( $restau['num'] == $commentaire['num']){
 											?>
 												<tr>
-													<tr><img src="image/<?PHP echo $restau['photo']; ?>" width="700" height="200"></tr>
-													<tr>
-
-											         	<form method="POST" action="action.php">
-														<input type="submit"   name="like" value="like">
-														<input type="hidden" value=<?PHP echo $commentaire['idclient']; ?> name="idclient">
-														<input type="hidden" value=<?PHP echo $commentaire['num']; ?> name="num">
-														<input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
-														</form>
-														
-														</tr>
+													<td><img src="image/<?PHP echo $restau['photo']; ?>" width="700" height="200">
 													<?php
-													//$commenta=new commentaireC();
-													//$listerestau=$rest->afficheelike($num);
+													$rest=new rest();
+													$listerestau=$rest->afficheelike($num);
 													?>
-												
+												</td>
 												    <td>
 													
 													</td>
 													
 												</tr>
-												<?PHP
-												foreach($listecommm as $like){
-											
-														
-											?>	<tr>
-										            	
-											</tr>
-											<?PHP
-                                                }
-
-                                        ?>
-
-												<?PHP
-												foreach($listecommm as $client){
-											
-														
-											?>	
+												
 												<tr>
-												<td><?PHP echo $client['nom']; ?>
-												<?PHP echo $client['prenom']; ?></td>
+												
+						
 												</tr>
-												<?PHP
-                                                }
-
-                                        ?>
+											
 
 												<?PHP
 												foreach($listecomm as $commentaire){
+											
 														
 											?>
 
 
 												<tr>
-												<td><?PHP echo $commentaire['commentaire']; ?></td>
-												</tr>
-												
 												<td>
-
-												<form method="POST" action="supprimerr.php">
-														<input type="submit"   name="supprimer" value="supprimer">
-														<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
-														</form></td>
+											<h4>	<?PHP echo $commentaire['nom']; ?>
+												<?PHP echo $commentaire['prenom']; ?> :
+												<h6><?PHP echo $commentaire['commentaire']; ?></h6>
+												</h4>
+												</td>
 											
+												
+												</tr>
+												<tr>
+												<td>
+												
 											    <td>
 												  
-													<form method="POST" action="modifier.php">
-													<input type="submit" name="modifier" value="modifier" >
-													<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
 													
-												    </form>
 												</td>
 													
                                             </tr>
@@ -204,7 +168,7 @@ $listecommm=$commentaireC->afficherclient($idclient);
 											
 											
                                 
-											
+										
 
                                         
                                        

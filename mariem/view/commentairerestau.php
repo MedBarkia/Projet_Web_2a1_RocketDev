@@ -1,6 +1,8 @@
 <?PHP
+   
     include "../controller/restauC.php";
-
+	
+    
     $restauC=new restauC();
     $listerestau=$restauC->afficherproduit();
 
@@ -106,7 +108,7 @@
                                         <tr>
                                             <th> </th>
                                             <th> </th>
-                                            
+                                                                                    
                                             
                                             
                                         </tr>
@@ -114,7 +116,7 @@
                                         <?PHP
                                             foreach($listerestau as $restau){
                                         ?>
-                                            
+										
                                             <tr>
                                              <th>
                                              <?PHP echo $restau['nom']; ?>
@@ -132,23 +134,31 @@
 											
 										    </tr>
 											<tr>
-											<td>
- 
-											<form method="POST" action="affichercommentaire.php">
-                                            <input type="submit" name="commenter" value="afficher les commentaire">
-                                            <input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
-
-                                           </form>
-					                         </td>
+											
+												
+                                             
 											</tr>
 											<tr>
 											<td>
  
-											<form method="POST" action="#formulairee">
+											<form method="POST" action="afficher.php">
+                                            <input type="submit" name="commenter" value="afficher les commentaire">
+                                            <input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
+                                           </form>
+										   <form method="POST" action="#formulairee">
                                             <input type="submit" name="commenter" value="commenter" >
                                             <input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
 
                                            </form>
+											 
+											</td>
+											</tr>
+											
+											
+											<tr>
+											<td>
+ 
+											
 					                         </td>
 											</tr>
 
@@ -157,6 +167,7 @@
                                         <?PHP
                                                 }
                                         ?>
+										
                                        
                                         </table>
                                         
@@ -176,27 +187,27 @@
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
-						<form action="ajouterr.php" method="POST" id="formulairee">
+						<form action="ajouterr.php" method="POST"  onsubmit="return valider()" name="MonForm" id="formulairee">
 							<div class="row">
 					          		<h3>ajouter votre commentaire</h3>
 									<div class="col-md-12">
 										<div class="form-group">
 
-											<input type="text" class="form-control" id="num" name="num" value=<?PHP echo $_POST['num']; ?> >
+											<input type="text" class="form-control" id="num" name="num" value=<?PHP echo $_POST['num']; ?> readonly>
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
 
-											<input type="text" class="form-control" id="idclient" name="idclient" placeholder="votre id" required data-error="Please enter your id">
+											<input type="text" class="form-control" id="idclient" name="idclient" placeholder="votre id" >
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
 
                                     <div class="col-md-12">
 										<div class="form-group">
-                                        <textarea name="commentaire" class="form-control" id="commentaire" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                                        <textarea name="commentaire" class="form-control" id="commentaire" placeholder="Your Message *" ></textarea>
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
@@ -212,7 +223,25 @@
 									</div>
 								</div>
 								
-							</div>            
+							</div>  
+							<SCRIPT LANGUAGE="JavaScript">
+    function valider() 
+{
+    var InputText=window.document.MonForm.id.value;
+   
+    var i=window.document.MonForm.num.value;
+    var j=window.document.MonForm.idclient.value;
+    var a=window.document.MonForm.commentaire.value;
+    if((InputText=="") || (i=="")  || (a=="") || (j=="")){
+        alert ("verifier les champs");
+        return false; 
+    
+    }
+
+    else return true;
+  
+}
+</SCRIPT>          
 						</form>
 					</div>
 				</div>
