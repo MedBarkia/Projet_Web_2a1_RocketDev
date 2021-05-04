@@ -37,7 +37,7 @@ if (
             $_POST['etat'],
             $_POST['livreur'],        );
         $livraisonc->ajoutlivraison($livraison);
-        header('Location:afficherlivraison.php');
+        header('Location:back.php');
     }
     else
         $error = "Missing information";
@@ -60,7 +60,7 @@ if (
     <?php echo $error; ?>
 </div>
 
-<form action="" method="POST">
+<form action="" onsubmit="return validateForm()" name="myForm" method="POST">
     <table border="1" align="center">
 
         <tr>
@@ -133,6 +133,63 @@ if (
         </tr>
     </table>
 </form>
+<script>
+function validateForm() {
+      var id= document.forms["myForm"]["id"].value;
+  var nom= document.forms["myForm"]["nom"].value;
+    var adresse = document.forms["myForm"]["adresse"].value;
+    var total = document.forms["myForm"]["total"].value;
+     var date = document.forms["myForm"]["date"].value;
+     var etat = document.forms["myForm"]["etat"].value;
+     var livreur = document.forms["myForm"]["livreur"].value;
+
+  if (nom == "") {
+    alert("nom vide");
+    return false;
+  }
+  if (id == "") {
+    alert("id vide");
+    return false;
+  }
+
+    if (total == "") {
+    alert("total vide");
+    return false;
+  }
+  
+  if (livreur == "") {
+    alert("livreur vide");
+    return false;
+  }
+  
+  if (adresse == "") {
+    alert("adresse vide");
+    return false;
+  }
+  
+  if (livreur == "") {
+    alert("livreur vide");
+    return false;
+  }
+    
+    
+      if (nom.length<5) {
+
+    alert("too short name ");
+    return false;
+  }
+  if (adresse.length<4) {
+
+alert("too short adress ");
+return false;
+}
+   
+
+
+ 
+    
+}
+</script>
 </body>
 
 </html>

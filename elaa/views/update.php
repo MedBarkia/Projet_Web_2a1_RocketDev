@@ -11,4 +11,4 @@ $livreur= $_POST['livreur'];
 
 $livraisonc=new livraisonc();
 $livraisonc->modifier($id,$nom,$adresse,$total ,$date,$etat ,$livreur);
-header('Location:afficherlivraison.php');
+header('Location:back.php');
