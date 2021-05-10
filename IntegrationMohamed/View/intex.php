@@ -98,7 +98,8 @@ echo 'Bienvenue  ', $_SESSION['e'];
                         <li><a href="#the-menu" class="page-scroll">Ordre</a></li>   
                         <li><a href="#Produit" class="page-scroll">Produits</a></li>
                         <li><a href="#Book" class="page-scroll">Chefs</a></li> 
-                        <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li> 
+                        <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li>
+                        <li><a href="commentairerestau.php" class="page-scroll">Restaurant</a></li> 
                         <li><a href="signupForum.php" class="page-scroll">Aide</a></li>  
                         <li><a href="modifierUtilis.php" class="page-scroll">Paramètres généraux du compte</a></li>  
                         <li><a href="#search"><i class="fa fa-search"></i></a></li>   

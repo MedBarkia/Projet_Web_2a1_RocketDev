@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,6 +68,7 @@
                         <li><a href="#Produit" class="page-scroll">Produits</a></li>
                         <li><a href="#Book" class="page-scroll">Chefs</a></li> 
                         <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li> 
+                        <li><a href="commentairerestau.php" class="page-scroll">restaurant</a></li> 
                         <li><a href="signupForum.php" class="page-scroll">Aide</a></li>  
                         <li><a href="modifierUtilis.php" class="page-scroll">Paramètres généraux du compte</a></li>  
                         <li><a href="#search"><i class="fa fa-search"></i></a></li>   
@@ -259,108 +261,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-md-6 wow fadeIn">
-                            <h2 class="mb50"><span class="heading-font text-uppercase">Meilleurs Restaurants</span></h2>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/dar el jeld.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>Dar El Jeld <span class="theme-accent-color">+216 71 560 916</span></h3>
-                                        <p>5-10, Rue Dar El Jeld 5, Rue Dar El Jeld, Tunis 1006 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/La salle à manger.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>La salle à manger<span class="theme-accent-color">+216 71 793 283</span></h3>
-                                        <p>3 Rue Imam Sahnoun 3 rue Imam sahnoun, Tunis 1002 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/La Closerie.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>La Closerie <span class="theme-accent-color">+216 70 938 537</span></h3>
-                                        <p>Km.16,Sidi Fredj, la Soukra, Tunis Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/L'Astragale.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>L'Astragale <span class="theme-accent-color">+216 71 785 080</span></h3>
-                                        <p>17, Ave Charles Nicolle Le Belvèdère, Tunis 1082 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 wow fadeIn">
-                            <h2 class="mb50"><span class="heading-font text-uppercase"> </span></h2>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/Le Comptoir de Tunis.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>Le Comptoir de Tunis <span class="theme-accent-color">+216 71 832 590</span></h3>
-                                        <p>8, Rue de Syrie, Tunis 1002 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/Dar Belhadj.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>Dar Belhadj <span class="theme-accent-color">+216 22 200 702</span></h3>
-                                        <p>104C toujane matmata gabes toujane gabes tunisie, Tunis 6045 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/La Falaise.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>La Falaise <span class="theme-accent-color">+216 21 643 215</span></h3>
-                                        <p>24 Rue Troudi, Tunis 1069 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="food-menu-item">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="assets/img/food/Restaurant Lemdina.jpg" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <h3>Restaurant Lemdina <span class="theme-accent-color">+216 55 113 333</span></h3>
-                                        <p>1 Les Berges du Lac A coté de l'hôtel Acropole, Tunis 1059 Tunisie</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="container">
                     <div class="row">

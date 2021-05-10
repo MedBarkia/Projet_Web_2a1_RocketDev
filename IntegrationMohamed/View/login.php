@@ -27,6 +27,7 @@
       </form>
       <div class="link">Not yet signed up? <a href="signupForum.php">Signup now</a></div>
       <p class="mt8" align="center"><a href="addU.php" class="btn btn-primary btn-red page-scroll"><i class="fa fa-long-arrow-left"></i></a></p>
+     
     </section>
   </div>
   

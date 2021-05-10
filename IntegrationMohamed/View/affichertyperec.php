@@ -44,46 +44,47 @@ $listetyperecs = $typerecC->affichertyperec();
       <div class="logo"><a href="" class="simple-text logo-normal">
          COUP DE CHEF
         </a></div>
-      <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
         <ul class="nav">
-        <li class="nav-item  ">
-            <a class="nav-link" href="./index.html">
+          <li class="nav-item  ">
+            <a class="nav-link" href="./back.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-          <li class="nav-item ">
+           <li class="nav-item  ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-          <li class="nav-item ">
+           <li class="nav-item active  ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
+           
+          <li class="nav-item ">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">content_paste</i>
+              <p>Commentaires</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>chefs et recettes</p>
+            </a>
+          </li>
           <li class="nav-item ">
             <a class="nav-link" href="./icons.html">
-              <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">library_books</i>
-              <p>Chef et Recettes </p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
               <i class="material-icons">bubble_chart</i>
               <p>Livraisons</p>
             </a>
@@ -94,10 +95,16 @@ $listetyperecs = $typerecC->affichertyperec();
               <p>Maps</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">notifications</i>
+              <i class="material-icons">Reclamation</i>
               <p>Reclamation</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">Restaurant</i>
+              <p>restaurant</p>
             </a>
           </li>
           
