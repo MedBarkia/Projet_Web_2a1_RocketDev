@@ -12,7 +12,7 @@ if (isset($_POST["login"]) &&
          $_SESSION['e'] = $_POST["login"];// on stocke dans le tableau une colonne ayant comme nom "e",
         //  avec l'email à l'intérieur
         if($message!='pseudo ou le mot de passe est incorrect'){
-           header('Location:livreur.php');}
+           header('Location:affichercommande.php');}
         else{
             $message='pseudo ou le mot de passe est incorrect';
         }}
