@@ -1,25 +1,36 @@
-<?PHP
-session_start();
 
-include_once "../controller/administrateurC.php";
+<?PHP
+ session_start();
+ include "../controller/CategorieC.php";
+
+
 // On teste si la variable de session existe et contient une valeur
 if(!isset($_SESSION["e"])){
-    var_dump($_SESSION);
-    // Si inexistante ou nulle, on redirige vers le formulaire de login
-  header('Location: connexionAd.php');
-   }
-	$administrateurC=new administrateurC();
-	$listeUsers=$administrateurC->afficherAdmin();
+ var_dump($_SESSION);
+ // Si inexistante ou nulle, on redirige vers le formulaire de login
+header('Location: connexionAD.php');
+}
+
+
+	$categorieC=new categorieC();
+	$liste=$categorieC->affichercategories();
 
 ?>
-<html>
-	<head>
-		<meta charset="utf-8" />
-  <lin k rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-coup de chef  </title>
+    Material Dashboard by Creative Tim
+  </title>
+  
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -28,20 +39,13 @@ coup de chef  </title>
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  
 
+  
+</head>
 
-<style> 
- input[type=submit]  {
-  background-color: #f8ceec; color: black; /* Gray */
-border-radius: 4px;
-}
-</style>
-    </head>
-    <body>
-
-     	<hr>
-
-    <div class="wrapper ">
+<body class="">
+  <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -96,7 +100,7 @@ border-radius: 4px;
               <p>Livraisons</p>
             </a>
           </li>
-          <li class="nav-item   active">
+          <li class="nav-item   ">
             <a class="nav-link" href="./ajouterproduit.php">
               <i class="material-icons">library_books</i>
               <p>Produit</p>
@@ -114,14 +118,14 @@ border-radius: 4px;
               <p>restaurant</p>
             </a>
           </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="./affichercategorie.php">
+          <li class="nav-item  active ">
+            <a class="nav-link" href="ajoutercategorie.php">
               <i class="material-icons">library_books</i>
               <p>categorie</p>
             </a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link" href="afficheravis.php">
+            <a class="nav-link" href="afficheravis.php.php">
               <i class="material-icons"> library_books</i>
               <p>avis</p>
             </a>
@@ -135,8 +139,7 @@ border-radius: 4px;
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-                                    <a href="ajouterAdmin.php" class="appointment-btn scrollto">Ajouter Admin</a>
-
+            <a class="navbar-brand" href="javascript:;">Map</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -145,17 +148,15 @@ border-radius: 4px;
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-         <form class="navbar-form" action="rechercheAd.php" method="POST">
-                <div class="input-group no-border">
-                  <input type="search" name="rech" class="form-control" placeholder="Search...">
-                  <button type="submit" value="" name="rechercher" class="btn btn-white btn-round btn-just-icon">
-                    <i class="material-icons">search</i>
-                    <div class="ripple-container"></div>
-                  </button>
-                </div>
-              </form>
-
-
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="javascript:;">
@@ -165,7 +166,6 @@ border-radius: 4px;
                   </p>
                 </a>
               </li>
-              
               <li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -194,7 +194,6 @@ border-radius: 4px;
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="deconnexionAd.php">Log out</a>
-
                 </div>
               </li>
             </ul>
@@ -202,98 +201,60 @@ border-radius: 4px;
         </div>
       </nav>
       <!-- End Navbar -->
+
+      
+   
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-
-                  <h4 class="card-title">Listes des  Administrateurs</h4>
-
+                  <h4 class="card-title ">Liste des categories </h4>
                 </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          reference
+                        </th>
+                        <th>
+                          idp
+                        </th>
+                        <th>
+                          nomcategorie
+                        </th>
+                     
+                      </thead>
+                      <tbody>
 
-        <hr>
-    
-		<table class="table" id="dataTable">
-<thead class=" text-primary">
-				<th>Id</th>
-				<th>Nom</th>
-				<th>Email</th>
-				<th>supprimer</th>
-				<th>modifier</th>
-      </thead>
+            <?PHP
+                foreach($liste as $categorie){
+            ?>
+                <tr>
+                    <td><?PHP echo $categorie['ref']; ?></td>
+                    <td><?PHP echo $categorie ['idp']; ?></td>
+                    <td><?PHP echo $categorie['nomcategorie']; ?></td>
 
-			<?PHP
-				foreach($listeUsers as $user){
-			?>
-				<tr>
-					<td><?PHP echo $user['id']; ?></td>
-					<td><?PHP echo $user['nom']; ?></td>
-					<td><?PHP echo $user['email']; ?></td>
-					<td>
-						<form method="POST" action="supprimerAdmin.php">
-						<input type="submit" class="btn btn-primary pull-right" name="supprimer" value="supprimer">
-						<input  type="hidden" value=<?PHP echo $user['id']; ?> name="id">
-						</form>
-					</td>
-					<td>
-						<a href="modifierAdmin.php?id=<?PHP echo $user['id']; ?>" >Modifier </a>
-					</td>
-				</tr>
-			<?PHP
-				}
-			?>
-	
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </div>
-      </div>
-                <script src="script.js"></script>
-
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+                    <td>
+                        <form method="POST" action="supprimercategorie.php">
+                        <input type="submit" name="supprimer" value="supprimer"  class="btn btn-primary">
+                        <input type="hidden" value=<?PHP echo $categorie['ref']; ?> name="ref">
+                        </form>
+                    </td>
+                    <td>
+                        <a href="modifiercategorie.php?idp=<?PHP echo $categorie['ref']; ?>"> Modifier </a>
+                    </td>
+                </tr>
+            <?PHP
+                }
+            ?>
+            </table>
+      <div id="map"></div>
     </div>
   </div>
+  
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
@@ -335,9 +296,7 @@ border-radius: 4px;
             <img src="../assets/img/sidebar-4.jpg" alt="">
           </a>
         </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-        </li>
+        
         <!-- <li class="header-title">Want more components?</li>
             <li class="button-container">
                 <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
@@ -346,7 +305,7 @@ border-radius: 4px;
             </li> -->
         <li class="button-container">
           <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
-            View Documentation
+            
           </a>
         </li>
         <li class="button-container github-star">
@@ -362,6 +321,7 @@ border-radius: 4px;
       </ul>
     </div>
   </div>
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -375,13 +335,13 @@ border-radius: 4px;
   <script src="../assets/js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
   <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
   <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
   <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
-  <!--  Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
   <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
@@ -396,7 +356,7 @@ border-radius: 4px;
   <!-- Library for adding dinamically elements -->
   <script src="../assets/js/plugins/arrive.min.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <script src=""></script>
   <!-- Chartist JS -->
   <script src="../assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -576,6 +536,13 @@ border-radius: 4px;
       });
     });
   </script>
-</body>
-
-</html>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initGoogleMaps();
+    });
+  </script>
+     
+    
+			</body>
+			</html>

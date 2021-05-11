@@ -64,14 +64,14 @@ $listetyperecs = $typerecC->affichertyperec();
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item active  ">
+           <li class="nav-item   ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
            
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="./tablecom.php">
               <i class="material-icons">content_paste</i>
               <p>Commentaires</p>
@@ -89,10 +89,10 @@ $listetyperecs = $typerecC->affichertyperec();
               <p>Livraisons</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+          <li class="nav-item   active">
+            <a class="nav-link" href="./ajouterproduit.php">
+              <i class="material-icons">library_books</i>
+              <p>Produit</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -105,6 +105,18 @@ $listetyperecs = $typerecC->affichertyperec();
             <a class="nav-link" href="table.php">
               <i class="material-icons">Restaurant</i>
               <p>restaurant</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">library_books</i>
+              <p>categorie</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> library_books</i>
+              <p>avis</p>
             </a>
           </li>
           

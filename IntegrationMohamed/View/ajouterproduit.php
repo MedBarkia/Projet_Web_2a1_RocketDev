@@ -1,25 +1,64 @@
-<?PHP
-session_start();
 
-include_once "../controller/administrateurC.php";
-// On teste si la variable de session existe et contient une valeur
-if(!isset($_SESSION["e"])){
-    var_dump($_SESSION);
-    // Si inexistante ou nulle, on redirige vers le formulaire de login
-  header('Location: connexionAd.php');
-   }
-	$administrateurC=new administrateurC();
-	$listeUsers=$administrateurC->afficherAdmin();
+<?php
+include_once '../model/produit.php';
+include_once '../controller/produitC.php';
+
+
+
+$error = "";
+
+// create user
+$produit= null;
+// create an instance of the controller
+$produitC = new produitC();
+if (
+    isset($_POST["idp"]) &&
+    isset($_POST["nom"]) &&
+    isset($_POST["marque"]) &&
+    isset($_POST["dateajout"])&&
+    isset($_POST["prix"])&&
+
+    isset($_POST["image"])
+
+) {
+    if (
+        !empty($_POST["idp"]) &&
+        !empty($_POST["nom"]) &&
+        !empty($_POST["marque"]) &&
+        !empty($_POST["dateajout"])&&
+        !empty($_POST["prix"])&&
+
+        !empty($_POST["image"])
+
+    ) {
+        $produit = new produit(
+            $_POST['idp'],
+            $_POST['nom'],
+            $_POST['marque'],
+            $_POST['dateajout'],
+            $_POST['prix'],
+
+            $_POST['image'],        );
+        $produitC->ajouterproduit($produit);
+        header('Location:afficherproduit.php');
+    }
+    else
+        $error = "Missing information";
+}
+
 
 ?>
-<html>
-	<head>
-		<meta charset="utf-8" />
-  <lin k rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-coup de chef  </title>
+    Material Dashboard by Creative Tim
+  </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -28,20 +67,67 @@ coup de chef  </title>
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-
-
-<style> 
- input[type=submit]  {
-  background-color: #f8ceec; color: black; /* Gray */
-border-radius: 4px;
-}
-</style>
-    </head>
-    <body>
-
-     	<hr>
-
-    <div class="wrapper ">
+  <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+    <style>
+        body{
+        padding:10% 3% 10% 3%;
+        text-align:center;
+        }
+        img{
+            height:140px;
+                width:140px; 
+        }
+        h1{
+        color: #32a852;
+        }
+        .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+</head>
+<body  class="" >
+<div class="mode">
+        Dark mode:             
+        <span class="change">OFF</span>
+    </div>
+      
+    <div>
+        
+      
+        <p>
+            
+        </p>
+    </div>
+      
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
+  
+  <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -115,13 +201,13 @@ border-radius: 4px;
             </a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link" href="./affichercategorie.php">
+            <a class="nav-link" href="ajoutercateogrie.php">
               <i class="material-icons">library_books</i>
               <p>categorie</p>
             </a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link" href="afficheravis.php">
+            <a class="nav-link" href="afficheravis/.php">
               <i class="material-icons"> library_books</i>
               <p>avis</p>
             </a>
@@ -130,14 +216,18 @@ border-radius: 4px;
         </ul>
       </div>
     </div>
+    
+    
     <div class="main-panel">
+    
+      
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-                                    <a href="ajouterAdmin.php" class="appointment-btn scrollto">Ajouter Admin</a>
-
+            <a class="navbar-brand" href="javascript:;">Map</a>
           </div>
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -145,17 +235,16 @@ border-radius: 4px;
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-         <form class="navbar-form" action="rechercheAd.php" method="POST">
-                <div class="input-group no-border">
-                  <input type="search" name="rech" class="form-control" placeholder="Search...">
-                  <button type="submit" value="" name="rechercher" class="btn btn-white btn-round btn-just-icon">
-                    <i class="material-icons">search</i>
-                    <div class="ripple-container"></div>
-                  </button>
-                </div>
-              </form>
-
-
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="javascript:;">
@@ -165,7 +254,6 @@ border-radius: 4px;
                   </p>
                 </a>
               </li>
-              
               <li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -182,6 +270,8 @@ border-radius: 4px;
                   <a class="dropdown-item" href="#">Another One</a>
                 </div>
               </li>
+              
+              
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -189,116 +279,188 @@ border-radius: 4px;
                     Account
                   </p>
                 </a>
+                
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="deconnexionAd.php">Log out</a>
-
+                  <a class="dropdown-item" href="#">Log out</a>
                 </div>
               </li>
             </ul>
           </div>
+          
         </div>
+        
       </nav>
-      <!-- End Navbar -->
+      
+      
+      
+      <!-- End Navbar -->    
+
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
+      <form   onsubmit="return validateForm()" name="myForm" action="" method="POST">
+    <table border="0" align="center">
 
-                  <h4 class="card-title">Listes des  Administrateurs</h4>
+        <tr>
+            <td>
+                <label for="idp"  class="bmd-label-floating">idp:
+                </label>
+            </td>
+            <td><input type="text" name="idp" id="idp" maxlength="20"  class="form-control" >    <span class="error" id="errorid"></span></p>
+ </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="nom">nom:
+                </label>
+            </td>
+            <td><input type="text" name="nom" id="nom" maxlength="20"  class="form-control">   <span class="error" id="errorname"></span></p>
+ </td>
+        </tr>
 
+        <tr>
+            <td>
+                <label for="marque">marque:
+                </label>
+            </td>
+            <td>
+                <input type="marque" name="marque" id="marque"   class="form-control" >    <span class="error" id="errormarque"></span></p>
+
+            </td>
+        </tr>
+        <td>
+                <label for="dateajout">dateajout:
+                </label>
+            </td>
+            <td>
+                <input type="date" name="dateajout" id="dateajout"   class="form-control"  >  <span class="error" id="errordate"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="image">upload:
+                </label>
+            </td>
+            <td>
+                <input type="file" name="image" id="image"  class="form-control" >    <span class="error" id="errorimage"></span></p>
+
+            </td>
+        </tr>
+       <tr>
+       <tr>
+            <td>
+                <label for="prix">prix:
+                </label>
+            </td>
+            <td>
+                <input type="text" name="prix" id="prix"  class="form-control" >    <span class="error" id="errorprix"></span></p>
+
+            </td>
+        </tr>
+       <tr>
+            <td>
+                <input type="submit" value="Envoyer" class="btn btn-primary pull-right">
+            </td>
+            <td>
+                <input type="reset" value="Annuler"  class="btn btn-primary pull-right">
+            </td>
+            
+        </tr>
+    </table>
+   
+</form>
+<td>
+                        <form method="POST" action="afficherproduit.php">
+                        <input type="submit" name="afficher" value="afficher les produits"  class="btn btn-primary pull-right">
+                        
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="modifierproduit.php">
+                        <input type="submit" name="modifier" value="modifier les produits"  class="btn btn-primary pull-right">
+                        <input type="hidden" value=<?PHP echo $produit['idp']; ?> name="idp">
+                        <input type="hidden" value=<?PHP echo $produit['nom']; ?> name="nom">
+
+
+                        
+                        </form>
+                    </td>
                 </div>
+                </div>
+<script>
+function validateForm() {
+      var idp= document.forms["myForm"]["idp"].value;
+  var nom= document.forms["myForm"]["nom"].value;
+    var marque = document.forms["myForm"]["marque"].value;
+    var image = document.forms["myForm"]["image"].value;
+     var dateajout = document.forms["myForm"]["dateajout"].value;
 
-        <hr>
+  if (nom == "") {
+
+    document.getElementById('errorname').innerHTML="le champ  nom ne peut pas etre vide";  
+    return false;
+  }
+  if (idp == "") {
+    document.getElementById('errorid').innerHTML="le champ de l'id ne peut pas etre vide";  
+    return false;
+  }
+  if (idp == 0) {
+    document.getElementById('errorid').innerHTML="Veuillez entrez un id non  null";  
+    return false;
+  }
+    if (marque == "") {
+      document.getElementById('errormarque').innerHTML="Veuillez entrez une marque ";  
+
+    return false;
+  }
+  if (dateajout == "") {
+      document.getElementById('errordate').innerHTML="Veuillez entrez une date ";  
+
+    return false;
+  }
     
-		<table class="table" id="dataTable">
-<thead class=" text-primary">
-				<th>Id</th>
-				<th>Nom</th>
-				<th>Email</th>
-				<th>supprimer</th>
-				<th>modifier</th>
-      </thead>
+      if (nom.length<5) {
 
-			<?PHP
-				foreach($listeUsers as $user){
-			?>
-				<tr>
-					<td><?PHP echo $user['id']; ?></td>
-					<td><?PHP echo $user['nom']; ?></td>
-					<td><?PHP echo $user['email']; ?></td>
-					<td>
-						<form method="POST" action="supprimerAdmin.php">
-						<input type="submit" class="btn btn-primary pull-right" name="supprimer" value="supprimer">
-						<input  type="hidden" value=<?PHP echo $user['id']; ?> name="id">
-						</form>
-					</td>
-					<td>
-						<a href="modifierAdmin.php?id=<?PHP echo $user['id']; ?>" >Modifier </a>
-					</td>
-				</tr>
-			<?PHP
-				}
-			?>
-	
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </div>
-      </div>
-                <script src="script.js"></script>
 
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+        document.getElementById('errorname').innerHTML="Veuillez entrez un nom de longeur supreieur a 5";  
+    return false;
+  }
+  if (marque.length<4) {
+
+
+    document.getElementById('errormarque').innerHTML="Veuillez entrez une marque de longeur supreieur a 4";  
+return false;
+}
+   
+      if (image == "") {
+        document.getElementById('errorimage').innerHTML="Veuillez entrez une image";  
+
+
+    return false;
+  }
+
+ 
+    
+}
+</script>
+      <div id="map"></div>
+     
+      
     </div>
+    
   </div>
+ 
+  
   <div class="fixed-plugin">
+    
+    
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
         <i class="fa fa-cog fa-2x"> </i>
       </a>
+      
       <ul class="dropdown-menu">
         <li class="header-title"> Sidebar Filters</li>
         <li class="adjustments-line">
@@ -314,12 +476,16 @@ border-radius: 4px;
             <div class="clearfix"></div>
           </a>
         </li>
+        
+        
+        
         <li class="header-title">Images</li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
             <img src="../assets/img/sidebar-1.jpg" alt="">
           </a>
         </li>
+        
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
             <img src="../assets/img/sidebar-2.jpg" alt="">
@@ -335,9 +501,8 @@ border-radius: 4px;
             <img src="../assets/img/sidebar-4.jpg" alt="">
           </a>
         </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-        </li>
+        
+        
         <!-- <li class="header-title">Want more components?</li>
             <li class="button-container">
                 <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
@@ -346,7 +511,7 @@ border-radius: 4px;
             </li> -->
         <li class="button-container">
           <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
-            View Documentation
+            
           </a>
         </li>
         <li class="button-container github-star">
@@ -362,6 +527,7 @@ border-radius: 4px;
       </ul>
     </div>
   </div>
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -375,13 +541,13 @@ border-radius: 4px;
   <script src="../assets/js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
   <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
   <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
   <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
-  <!--  Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
   <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
@@ -396,7 +562,7 @@ border-radius: 4px;
   <!-- Library for adding dinamically elements -->
   <script src="../assets/js/plugins/arrive.min.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <script src=""></script>
   <!-- Chartist JS -->
   <script src="../assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -405,6 +571,8 @@ border-radius: 4px;
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  
+  
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -576,6 +744,8 @@ border-radius: 4px;
       });
     });
   </script>
-</body>
+  
 
+
+</body>
 </html>

@@ -111,7 +111,15 @@ if(!isset($_SESSION["e"])){
 <body>
 
   <!-- ======= Top Bar ======= -->
-
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-phone"></i> +216 94 366 666
+        <i class="icofont-google-map"></i> tunis , araiana essoghra technopole ghazela
+      </div>
+     
+    </div>
+  </div>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

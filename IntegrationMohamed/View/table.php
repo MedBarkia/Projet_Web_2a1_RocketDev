@@ -81,14 +81,14 @@ $listerestau=$restauC->afficherproduit();
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item active  ">
+           <li class="nav-item   ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
            
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./tablecom.php">
               <i class="material-icons">content_paste</i>
               <p>Commentaires</p>
@@ -118,7 +118,7 @@ $listerestau=$restauC->afficherproduit();
               <p>Reclamation</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  active">
             <a class="nav-link" href="table.php">
               <i class="material-icons">Restaurant</i>
               <p>restaurant</p>

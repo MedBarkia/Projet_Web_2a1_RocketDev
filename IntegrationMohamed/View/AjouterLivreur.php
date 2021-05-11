@@ -86,37 +86,36 @@ coup de chef  </title>
         COUP DE CHEF
         </a></div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
+      <ul class="nav">
           <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="./back.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-           <li class="nav-item  ">
+          <li class="nav-item  ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  active ">
+           <li class="nav-item  ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item   ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
            
-          
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
               <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
+              <p>Commentaires</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -131,16 +130,34 @@ coup de chef  </title>
               <p>Livraisons</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+          <li class="nav-item   active">
+            <a class="nav-link" href="./ajouterproduit.php">
+              <i class="material-icons">library_books</i>
+              <p>Produit</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+            <a class="nav-link" href="afficherReclamation.php">
+              <i class="material-icons">Reclamation</i>
+              <p>Reclamation</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">Restaurant</i>
+              <p>restaurant</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">library_books</i>
+              <p>categorie</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> library_books</i>
+              <p>avis</p>
             </a>
           </li>
           

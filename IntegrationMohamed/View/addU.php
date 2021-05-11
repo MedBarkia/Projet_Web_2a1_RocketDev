@@ -408,6 +408,51 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php 
+include "../Controller/produitC.php";
+
+ $produitC=new produitC();
+
+$liste=$produitC->afficherproduit(); 
+?>
+<tbody  id="myTable">
+    
+    <?PHP
+
+foreach($liste as $row){
+
+  ?>
+    <tr>
+       <td><img style="
+    width: 150px;
+" src="<?php echo $row['image'] ?>"></td>
+<li><button><a class="add addPanier" href="addpanier.php?id=<?=$row['id'] ?>">au Panier?<i class="ti-shopping-cart"></i></a></button></li>
+      <td><?php echo $row['nom'] ?></td>
+      <td><?php echo $row['prix'] ?> DT</td>
+
+ 
+ <td> <form method="POST" action="afficherproduit.php">
+
+
+
+                                  
+    <input type="hidden" value="<?PHP echo $row['idp']; ?>" name="idp">       
+
+    
+  </form>
+
+     </td>
+  
+    
+    </tr>
+                  <?PHP
+                  
+}
+?>
+  
+  </tbody>
+</table>
+</html>
                             <div class="food-menu-item">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -929,6 +974,15 @@
                             </div>
                         </div>                
                     </div>
+                    <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">donner votre avis</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="avis.php">donner un avis</a>
+                                
+
+								
+							</div>
+						</li>
       
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
