@@ -99,11 +99,11 @@ border-radius: 4px;
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+              
+          <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
               <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
+              <p>Commentaires</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -118,16 +118,34 @@ border-radius: 4px;
               <p>Livraisons</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+          <li class="nav-item  ">
+            <a class="nav-link" href="./ajouterproduit.php">
+              <i class="material-icons">library_books</i>
+              <p>Produit</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+            <a class="nav-link" href="afficherReclamation.php">
+              <i class="material-icons">Reclamation</i>
+              <p>Reclamation</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">Restaurant</i>
+              <p>restaurant</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="./affichercategorie.php">
+              <i class="material-icons">library_books</i>
+              <p>categorie</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> library_books</i>
+              <p>avis</p>
             </a>
           </li>
           

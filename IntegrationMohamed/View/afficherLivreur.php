@@ -57,7 +57,7 @@ border-radius: 4px;
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item active ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
@@ -88,7 +88,7 @@ border-radius: 4px;
               <p>Livraisons</p>
             </a>
           </li>
-          <li class="nav-item   active">
+          <li class="nav-item  ">
             <a class="nav-link" href="./ajouterproduit.php">
               <i class="material-icons">library_books</i>
               <p>Produit</p>
