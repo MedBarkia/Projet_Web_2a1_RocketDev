@@ -426,7 +426,7 @@ foreach($liste as $row){
        <td><img style="
     width: 150px;
 " src="<?php echo $row['image'] ?>"></td>
-<li><button><a class="add addPanier" href="addpanier.php?id=<?=$row['id'] ?>">au Panier?<i class="ti-shopping-cart"></i></a></button></li>
+<li><button><a class="add addPanier" href="addpanier.php?idp=<?=$row['idp'] ?>">au Panier?<i class="ti-shopping-cart"></i></a></button></li>
       <td><?php echo $row['nom'] ?></td>
       <td><?php echo $row['prix'] ?> DT</td>
 
