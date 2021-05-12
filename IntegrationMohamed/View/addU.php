@@ -65,7 +65,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="deconnexion.php" class="page-scroll">Déconnexion</a></li>
+                        <li> <a href="Connexion.php" class="page-scroll">Se Connecter</a></li>
                     </ul> 
                     <ul class="nav navbar-nav navbar-left">
                     <li><a href="#about" class="page-scroll">About Us</a></li> 
@@ -75,7 +75,6 @@
                         <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li> 
                         <li><a href="commentairerestau.php" class="page-scroll">restaurants</a></li> 
                         <li><a href="signupForum.php" class="page-scroll">Aide</a></li>  
-                        <li><a href="modifierUtilis.php" class="page-scroll">Paramètres généraux du compte</a></li>  
                         <li><a href="#search"><i class="fa fa-search"></i></a></li>   
                     </ul>
                 </div>
