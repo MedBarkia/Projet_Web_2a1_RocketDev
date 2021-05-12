@@ -94,7 +94,6 @@ echo 'Bienvenue  ', $_SESSION['e'];
                     </ul> 
                     <ul class="nav navbar-nav navbar-left">
                     <li><a href="#about" class="page-scroll">About Us</a></li> 
-                        <li><a href="#Specials" class="page-scroll">Events</a></li>    
                         <li><a href="#the-menu" class="page-scroll">Ordre</a></li>   
                         <li><a href="#Produit" class="page-scroll">Produits</a></li>
                         <li><a href="#Book" class="page-scroll">Chefs</a></li> 

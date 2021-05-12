@@ -1,6 +1,6 @@
 <?PHP 
 require "assets/ssd/fpdf.php";
-$db = new PDO('mysql:host=localhost;dbname=medeet','root','');
+$db = new PDO('mysql:host=localhost;dbname=test3','root','');
 
    class myPDF extends FPDF{
 function header(){

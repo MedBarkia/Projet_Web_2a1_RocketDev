@@ -145,74 +145,78 @@ if (
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item  ">
+          <li class="nav-item ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item   ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
-           
-          <li class="nav-item">
-            <a class="nav-link" href="./tablecom.php">
-              <i class="material-icons">content_paste</i>
-              <p>Commentaires</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>chefs et recettes</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
-            </a>
-          </li>
-          <li class="nav-item   active">
-            <a class="nav-link" href="./ajouterproduit.php">
-              <i class="material-icons">library_books</i>
-              <p>Produit</p>
-            </a>
-          </li>
           <li class="nav-item ">
             <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">Reclamation</i>
-              <p>Reclamation</p>
+              <i class="material-icons">report</i>
+              <p>Reclamations</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherChef.php">
+              <i class="material-icons">person_pin</i>
+              <p>Chefs</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherRecettes.php">
+              <i class="material-icons">receipt</i>
+              <p>Recettes</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="ajouterproduit.php">
+              <i class="material-icons">shopping_basket</i>
+              <p>Produits</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">chrome_reader_mode</i>
+              <p>categories</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> rate_review</i>
+              <p>avis</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="elaa.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Commandes</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="table.php">
-              <i class="material-icons">Restaurant</i>
-              <p>restaurant</p>
+              <i class="material-icons">restaurant</i>
+              <p>Restaurants</p>
             </a>
           </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="ajoutercateogrie.php">
-              <i class="material-icons">library_books</i>
-              <p>categorie</p>
+           <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">insert_comment</i>
+              <p>Commentaires</p>
             </a>
-          </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="afficheravis/.php">
-              <i class="material-icons"> library_books</i>
-              <p>avis</p>
-            </a>
-          </li>
-          
+          </li> 
         </ul>
       </div>
     </div>
@@ -235,7 +239,7 @@ if (
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
+             <form class="navbar-form">
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
@@ -243,35 +247,7 @@ if (
                   <div class="ripple-container"></div>
                 </button>
               </div>
-            </form>
-            
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
-              
-              
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -279,21 +255,14 @@ if (
                     Account
                   </p>
                 </a>
-                
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="deconnexionAd.php">Log out</a>
                 </div>
               </li>
             </ul>
           </div>
-          
         </div>
-        
       </nav>
-      
       
       
       <!-- End Navbar -->    
@@ -380,8 +349,8 @@ if (
                     <td>
                         <form method="POST" action="modifierproduit.php">
                         <input type="submit" name="modifier" value="modifier les produits"  class="btn btn-primary pull-right">
-                        <input type="hidden" value=<?PHP echo $produit['idp']; ?> name="idp">
-                        <input type="hidden" value=<?PHP echo $produit['nom']; ?> name="nom">
+                        <input type="hidden" value="<?PHP echo $produit['idp']; ?>" name="idp">
+                        <input type="hidden" value="<?PHP echo $produit['nom']; ?>" name="nom">
 
 
                         

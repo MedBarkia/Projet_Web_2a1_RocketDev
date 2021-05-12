@@ -59,74 +59,78 @@ border-radius: 4px;
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item  ">
+          <li class="nav-item ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item active  ">
+           <li class="nav-item active ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
-           
-          <li class="nav-item">
-            <a class="nav-link" href="./tablecom.php">
-              <i class="material-icons">content_paste</i>
-              <p>Commentaires</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>chefs et recettes</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
-            </a>
-          </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="./ajouterproduit.php">
-              <i class="material-icons">library_books</i>
-              <p>Produit</p>
-            </a>
-          </li>
           <li class="nav-item ">
             <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">Reclamation</i>
-              <p>Reclamation</p>
+              <i class="material-icons">report</i>
+              <p>Reclamations</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="table.php">
-              <i class="material-icons">Restaurant</i>
-              <p>restaurant</p>
+            <a class="nav-link" href="afficherChef.php">
+              <i class="material-icons">person_pin</i>
+              <p>Chefs</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherRecettes.php">
+              <i class="material-icons">receipt</i>
+              <p>Recettes</p>
+            </a>
+          </li>
+          <li class="nav-item   ">
+            <a class="nav-link" href="ajouterproduit.php">
+              <i class="material-icons">shopping_basket</i>
+              <p>Produits</p>
             </a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link" href="./affichercategorie.php">
-              <i class="material-icons">library_books</i>
-              <p>categorie</p>
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">chrome_reader_mode</i>
+              <p>categories</p>
             </a>
           </li>
           <li class="nav-item  ">
             <a class="nav-link" href="afficheravis.php">
-              <i class="material-icons"> library_books</i>
+              <i class="material-icons"> rate_review</i>
               <p>avis</p>
             </a>
           </li>
-          
+          <li class="nav-item ">
+            <a class="nav-link" href="elaa.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Commandes</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">restaurant</i>
+              <p>Restaurants</p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">insert_comment</i>
+              <p>Commentaires</p>
+            </a>
+          </li> 
         </ul>
       </div>
     </div>
@@ -157,31 +161,7 @@ border-radius: 4px;
 
 
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
               
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -190,11 +170,7 @@ border-radius: 4px;
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="deconnexionAd.php">Log out</a>
-
                 </div>
               </li>
             </ul>
@@ -255,45 +231,11 @@ border-radius: 4px;
           </div>
         </div>
       </div>
-                <script src="script.js"></script>
 
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+ 
     </div>
   </div>
+
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
@@ -360,9 +302,12 @@ border-radius: 4px;
           <br>
         </li>
       </ul>
+      
     </div>
   </div>
+
   <!--   Core JS Files   -->
+  <script src="script.js"></script>
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>

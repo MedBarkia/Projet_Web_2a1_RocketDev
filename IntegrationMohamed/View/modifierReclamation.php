@@ -3,7 +3,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="medeet";
+$dbname="test3";
 
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 $q="SELECT * FROM typerec";
@@ -58,48 +58,72 @@ $listetype=mysqli_query($conn,$q);
               <p>Utilisateurs</p>
             </a>
           </li>
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">content_paste</i>
-              <p>Reservation</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">library_books</i>
-              <p>Chef et Recettes </p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item active ">
+          <li class="nav-item active">
             <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">notifications</i>
-              <p>Reclamation</p>
+              <i class="material-icons">report</i>
+              <p>Reclamations</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherChef.php">
+              <i class="material-icons">person_pin</i>
+              <p>Chefs</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherRecettes.php">
+              <i class="material-icons">receipt</i>
+              <p>Recettes</p>
+            </a>
+          </li>
+          <li class="nav-item   ">
+            <a class="nav-link" href="ajouterproduit.php">
+              <i class="material-icons">shopping_basket</i>
+              <p>Produits</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">chrome_reader_mode</i>
+              <p>categories</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> rate_review</i>
+              <p>avis</p>
+            </a>
+          </li>
+         <li class="nav-item ">
+            <a class="nav-link" href="elaa.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Commandes</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">restaurant</i>
+              <p>Restaurants</p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">insert_comment</i>
+              <p>Commentaires</p>
+            </a>
+          </li> 
         </ul>
       </div>
     </div>
@@ -135,22 +159,7 @@ $listetype=mysqli_query($conn,$q);
                   </p>
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
+              
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>

@@ -1,5 +1,5 @@
 <?PHP
-    include "../config.php";
+	require_once '../config.php';
     require_once '../Model/produit.php';
 
     class produitC {

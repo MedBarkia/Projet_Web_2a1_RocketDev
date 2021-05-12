@@ -52,19 +52,19 @@ if(!isset($_SESSION["e"])){
           </a></div>
         <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
+          <li class="nav-item active ">
             <a class="nav-link" href="./back.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item  ">
+         <li class="nav-item ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
@@ -76,56 +76,60 @@ if(!isset($_SESSION["e"])){
               <p>Administrateurs</p>
             </a>
           </li>
-           
-          <li class="nav-item">
-            <a class="nav-link" href="./tablecom.php">
-              <i class="material-icons">content_paste</i>
-              <p>Commentaires</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>chefs et recettes</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Livraisons</p>
-            </a>
-          </li>
-          <li class="nav-item   active">
-            <a class="nav-link" href="./ajouterproduit.php">
-              <i class="material-icons">library_books</i>
-              <p>Produit</p>
-            </a>
-          </li>
           <li class="nav-item ">
             <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">Reclamation</i>
-              <p>Reclamation</p>
+              <i class="material-icons">report</i>
+              <p>Reclamations</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="table.php">
-              <i class="material-icons">Restaurant</i>
-              <p>restaurant</p>
+            <a class="nav-link" href="afficherChef.php">
+              <i class="material-icons">person_pin</i>
+              <p>Chefs</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherRecettes.php">
+              <i class="material-icons">receipt</i>
+              <p>Recettes</p>
+            </a>
+          </li>
+          <li class="nav-item   ">
+            <a class="nav-link" href="ajouterproduit.php">
+              <i class="material-icons">shopping_basket</i>
+              <p>Produits</p>
             </a>
           </li>
           <li class="nav-item  ">
             <a class="nav-link" href="ajoutercategorie.php">
-              <i class="material-icons">library_books</i>
-              <p>categorie</p>
+              <i class="material-icons">chrome_reader_mode</i>
+              <p>categories</p>
             </a>
           </li>
           <li class="nav-item  ">
             <a class="nav-link" href="afficheravis.php">
-              <i class="material-icons"> library_books</i>
+              <i class="material-icons"> rate_review</i>
               <p>avis</p>
             </a>
           </li>
-          
+         <li class="nav-item ">
+            <a class="nav-link" href="./elaa.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Commandes</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="table.php">
+              <i class="material-icons">restaurant</i>
+              <p>Restaurants</p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">insert_comment</i>
+              <p>Commentaires</p>
+            </a>
+          </li> 
         </ul>
       </div>
     </div>

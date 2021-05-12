@@ -64,73 +64,78 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item  ">
+          <li class="nav-item ">
             <a class="nav-link" href="afficherUtilisateurs.php">
               <i class="material-icons">person</i>
               <p>Utilisateurs</p>
             </a>
           </li>
-           <li class="nav-item  ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherLivreur.php">
               <i class="material-icons">person</i>
               <p>Livreurs</p>
             </a>
           </li>
-           <li class="nav-item   ">
+           <li class="nav-item ">
             <a class="nav-link" href="afficherAdmin.php">
               <i class="material-icons">person</i>
               <p>Administrateurs</p>
             </a>
           </li>
-           
-          <li class="nav-item">
-            <a class="nav-link" href="./tablecom.php">
-              <i class="material-icons">content_paste</i>
-              <p>Commentaires</p>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherReclamation.php">
+              <i class="material-icons">report</i>
+              <p>Reclamations</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>chefs et recettes</p>
+            <a class="nav-link" href="afficherChef.php">
+              <i class="material-icons">person_pin</i>
+              <p>Chefs</p>
             </a>
           </li>
-          <li class="nav-item  active">
-            <a class="nav-link" href="./elaa.php">
-              <i class="material-icons">bubble_chart</i>
-              <p>Commande</p>
+          <li class="nav-item ">
+            <a class="nav-link" href="afficherRecettes.php">
+              <i class="material-icons">receipt</i>
+              <p>Recettes</p>
             </a>
           </li>
           <li class="nav-item   ">
-            <a class="nav-link" href="./ajouterproduit.php">
-              <i class="material-icons">library_books</i>
-              <p>Produit</p>
+            <a class="nav-link" href="ajouterproduit.php">
+              <i class="material-icons">shopping_basket</i>
+              <p>Produits</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="afficherReclamation.php">
-              <i class="material-icons">Reclamation</i>
-              <p>Reclamation</p>
+          <li class="nav-item  ">
+            <a class="nav-link" href="ajoutercategorie.php">
+              <i class="material-icons">chrome_reader_mode</i>
+              <p>categories</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="afficheravis.php">
+              <i class="material-icons"> rate_review</i>
+              <p>avis</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="elaa.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Commandes</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="table.php">
-              <i class="material-icons">Restaurant</i>
-              <p>restaurant</p>
+              <i class="material-icons">restaurant</i>
+              <p>Restaurants</p>
             </a>
           </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="./ajoutercategorie.php">
-              <i class="material-icons">library_books</i>
-              <p>categorie</p>
+           <li class="nav-item">
+            <a class="nav-link" href="./tablecom.php">
+              <i class="material-icons">insert_comment</i>
+              <p>Commentaires</p>
             </a>
-          </li>
-          <li class="nav-item  ">
-            <a class="nav-link" href="./.php">
-              <i class="material-icons"> library_books</i>
-              <p>avis</p>
-            </a>
-          </li>
+          </li> 
           
         </ul>
       </div>
@@ -170,22 +175,6 @@ The above copyright notice and this permission notice shall be included in all c
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons"></i>
                   <p class="d-lg-none d-md-block">
@@ -211,7 +200,6 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">table des commandes</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
                 <div align="center">
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="rechercher" title="Type in a name" >
@@ -327,39 +315,17 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
 
       </div>
-      <footer class="footer">
+     <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
+                <a href="addU.php">
+                  by RocketDev © ALL RIGHTS RESERVED
                 </a>
               </li>
             </ul>
           </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">ROCKET DEV</a> for a better web.
-          </div>
         </div>
       </footer>
     </div>

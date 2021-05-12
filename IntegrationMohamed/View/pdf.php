@@ -1,6 +1,6 @@
 <?PHP 
 require "../View/pdf/fpdf.php";
-$db = new PDO('mysql:host=localhost;dbname=integ','root','');
+$db = new PDO('mysql:host=localhost;dbname=test3','root','');
 
    class myPDF extends FPDF{
 function header(){

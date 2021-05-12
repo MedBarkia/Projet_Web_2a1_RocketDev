@@ -1,0 +1,41 @@
+@page
+{
+	size: A4;
+	margin-top: 1cm;
+    margin-left: 0.5cm;
+}
+#print-btn
+{
+	display: none;
+	visibility: none;
+}
+#pageFooter {
+    
+}
+#trap
+{
+  display: none;
+  visibility: none;
+}
+
+  a[href]:after {
+    content: none !important;
+  }
+
+#pageFooter:after {
+    counter-increment: page;
+    content: counter(page) "/" counter(page);
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+[data-theme="dark"] {
+  --background-color: #3F3F3F;
+  --text-color: #fff;
+}
