@@ -109,7 +109,7 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
                                    
 											<table >
 											<tr>
-												<br>
+							
 											
 											</tr>
                                             
@@ -118,6 +118,7 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
 													foreach($listerestau as $restau){
 														//if( $restau['num'] == $commentaire['num']){
 											?>
+											 
 												<tr>
 													<td><img src="image/<?PHP echo $restau['photo']; ?>" width="700" height="200">
 													<?php
@@ -125,10 +126,13 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
 													$listerestau=$rest->afficheelike($num);
 													?>
                                                    <form method="POST" action="dislike.php">
-														<input  class="btn btn-common"  type="submit"   name="like" value="je n'aime plus">
+														<input  class="btn btn-common"  type="submit"   name="like" value="je  n'aime  plus ">
 														<input type="hidden" value=<?PHP echo $_POST['idclient']; ?> name="idclient">
 														<input type="hidden" value=<?PHP echo $_POST['num']; ?> name="num">
                                                    </form>
+												   
+                                       
+
 												</td>
 												    
 													
@@ -147,7 +151,7 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
 												<tr>
 												<td>
 												<h4>	<?PHP echo $commentaire['nom']; ?>
-												<?PHP echo $commentaire['prenom']; ?> :
+												<?PHP echo $commentaire['prenom']; ?> 
 												<h6><?PHP echo $commentaire['commentaire']; ?></h6>
 												</h4>
 
@@ -166,7 +170,6 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
                                             </tr>
 											
 											
-											
                                 
 										
 
@@ -176,7 +179,9 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
                                                 }
 
                                         ?>
+										
 										   <?PHP
+										   
 														
 													}
 												//}
@@ -186,9 +191,13 @@ $sql =" INSERT INTO notificationn (idclient,num) values ('$idclient', '$num')";
 
 
 										?>
-                                       
+										
                                         </table>
-                                        
+                                        <form method="POST" action="commentairerestau.php">
+														<input  class="btn btn-common"  type="submit"   name="like" value="retour a la liste des restaurants">
+												
+                                                   </form>
+											
                                             </div>
                                         </div>
                                     </div>

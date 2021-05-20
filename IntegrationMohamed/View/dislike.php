@@ -179,6 +179,10 @@
 										?>
                                        
                                         </table>
+										<form method="POST" action="commentairerestau.php">
+														<input  class="btn btn-common"  type="submit"   name="like" value="retour a la liste des restaurants">
+												
+                                                   </form>
                                         
                                             </div>
                                         </div>

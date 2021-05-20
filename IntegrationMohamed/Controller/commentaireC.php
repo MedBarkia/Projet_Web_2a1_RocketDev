@@ -48,16 +48,6 @@
         }
       
         
-
-     
-      /*  function supprimer(int $idclient)
-        {
-        $db = config::getConnexion();
-        $sql = "DELETE FROM commentaiire  WHERE idclient= '$idclient' ";
-        $req = $db->prepare($sql);
-        $req->execute();
-		
-        }*/
         function modifier(int $id, int $idclient, string $commentaire)
         {
             $db = config::getConnexion();
@@ -125,6 +115,7 @@
             }   
            
         }
+        
 
          /* public function tri()
 	    {

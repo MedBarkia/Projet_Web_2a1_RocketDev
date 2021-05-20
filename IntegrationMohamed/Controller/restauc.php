@@ -56,27 +56,15 @@
             die('Erreur: '.$e->getMessage());
         }
         }
-        function modifier(int $num, string $nom, string $adresse, int $telephone , string $horaire)
+        function modifier(int $num, string $nom, string $adresse, int $telephone , string $horaire , string $photo)
         {
             $db = config::getConnexion();
-            $sql = "UPDATE restaurantt SET nom='$nom'  ,adresse='$adresse' , telephone='$telephone' , horaire='$horaire' WHERE num='$num'";
+            $sql = "UPDATE restaurantt SET nom='$nom'  ,adresse='$adresse' , telephone='$telephone' , horaire='$horaire' , photo='$photo' WHERE num='$num'";
             $req = $db->prepare($sql);
 		    $req->execute();
            
         }
-        function recuperer($num){
-			$sql="SELECT * from restaurantt where num=$num";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-				$user=$query->fetch();
-				return $user;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
+        
         function recupererid(){
 			$sql="SELECT id from utilisateur";
 			$db = config::getConnexion();
@@ -89,5 +77,17 @@
             } 
            
 		}
+        function afficher(){
+            
+            $sql="SELECT * FROM restaurantt";
+            $db = config::getConnexion();
+            try{
+                $liste = $db->query($sql);
+                return $liste;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }   
+        }
     }
         ?>

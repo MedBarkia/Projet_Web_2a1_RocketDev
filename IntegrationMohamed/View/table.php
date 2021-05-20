@@ -270,6 +270,11 @@ $listerestau=$restauC->afficherproduit();
                                 <form method="POST" action="formulairemodifier.php">
                                     <input class="btn btn-primary" type="submit" name="modifier" value="modifier">
                                     <input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
+                                    <input type="hidden" value=<?PHP echo $restau['nom']; ?> name="nom">
+                                    <input type="hidden" value=<?PHP echo $restau['adresse']; ?> name="adresse">
+                                    <input type="hidden" value=<?PHP echo $restau['telephone']; ?> name="telephone">
+                                    <input type="hidden" value=<?PHP echo $restau['horaire']; ?> name="horaire">
+                                    <input type="hidden" value=<?PHP echo $restau['photo']; ?> name="photo">
                                     </form>
                                   <!--  <a href="formulairemodifier.php $num="> Modifier </a>-->
                                 </td>

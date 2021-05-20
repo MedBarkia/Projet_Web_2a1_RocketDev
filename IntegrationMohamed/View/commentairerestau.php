@@ -4,12 +4,11 @@ session_start();
 	if(!isset($_SESSION["e"])){
 		var_dump($_SESSION);
 		// Si inexistante ou nulle, on redirige vers le formulaire de login
-	  header('Location: commentaireee.php');
+	  header('Location:connexion.php');
 	  
 	   }
     $restauC=new restauC();
-    $listerestau=$restauC->afficherproduit();
-	$user= $restauC->recupererid();  
+    $listerestau=$restauC->afficherproduit();  
 
 ?>
 <!DOCTYPE html>
@@ -119,7 +118,6 @@ session_start();
 														<form method="POST" action="#formulairee">
 															<input  class="btn btn-common" type="submit" name="commenter" value="commenter" >
 															<input type="hidden" value=<?PHP echo $restau['num']; ?> name="num">
-															<input type="hidden" value="<?php echo $user->id; ?>" name="id">
 
 														</form>
 													
@@ -208,7 +206,7 @@ session_start();
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-										<input type="text" class="form-control" id="idclient" name="idclient" placeholder="entrer votre id">
+										<input type="text" class="form-control" id="idclient" name="idclient"  value=<?PHP echo $_SESSION['id']; ?> readonly>
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>

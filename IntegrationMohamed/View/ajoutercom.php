@@ -166,7 +166,7 @@ $listecommm=$commentaireC->afficherclient($idclient);
 												</tr>
 												
 												<td>
-
+											
 												<form method="POST" action="supprimercom.php">
 														<input  class="btn btn-common"  type="submit"  name="supprimer" value="supprimer">
 														<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
@@ -181,6 +181,7 @@ $listecommm=$commentaireC->afficherclient($idclient);
 													<input type="hidden" value=<?PHP echo $commentaire['id']; ?> name="id">
 													<input type="hidden" value=<?PHP echo $commentaire['idclient']; ?> name="idclient">
 													<input type="hidden" value=<?PHP echo $commentaire['num']; ?> name="num">
+													<input type="hidden" value=<?PHP echo $commentaire['commentaire']; ?> name="commentaire">
 												    </form>
 												</td>
 													
@@ -209,6 +210,10 @@ $listecommm=$commentaireC->afficherclient($idclient);
 										?>
                                        
                                         </table>
+										<form method="POST" action="commentairerestau.php">
+														<input  class="btn btn-common"  type="submit"   name="like" value="retour a la liste des restaurants">
+												
+                                                   </form>
                                         
                                             </div>
                                         </div>

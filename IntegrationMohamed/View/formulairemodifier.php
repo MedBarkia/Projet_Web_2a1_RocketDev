@@ -9,7 +9,6 @@ Coded by Creative Tim
 
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -193,7 +192,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="nom"class="bmd-label-floating">Nom</label>
-                          <input type="text" class="form-control" name="nom" id="nom" >
+                          <input type="text" class="form-control" name="nom" id="nom" value=<?PHP echo $_POST['nom'];?> >
                         </div>
                       </div>
                     </div>
@@ -201,13 +200,13 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="adresse" class="bmd-label-floating">adresse</label>
-                          <input type="text" class="form-control" name="adresse" id="adresse" >
+                          <input type="text" class="form-control" name="adresse" id="adresse"  value=<?PHP echo $_POST['adresse'] ;?>>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="telephone" class="bmd-label-floating">telephone</label>
-                          <input type="text" class="form-control" name="telephone" id="telephone" size="8" required> 
+                          <input type="text" class="form-control" name="telephone" id="telephone" value=<?PHP echo $_POST['telephone'] ;?>> 
                           
                         </div>
                       </div>
@@ -216,7 +215,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-12">
                         <div class="form-group">
                           <label for="horaire" class="bmd-label-floating">horaire</label>
-                          <input type="time" class="form-control" name="horaire" id="horaire" min="9:00" max ="00.00" required>>
+                          <input type="time" class="form-control" name="horaire" id="horaire" value=<?PHP echo $_POST['horaire'] ;?>>
                         </div>
                       </div>
                     <div>
@@ -226,7 +225,7 @@ The above copyright notice and this permission notice shall be included in all c
                           
                         </div>
                         <div>
-                        <input type="file" class="form-control-file" name="photo" id="photo">
+                        <input type="file" class="form-control-file" name="photo" id="photo" value=<?PHP echo $_POST['photo'] ;?>  >
                         </div>
                     </div>
                 </div>

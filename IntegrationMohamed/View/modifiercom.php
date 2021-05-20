@@ -86,6 +86,13 @@
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+
+											<input type="text" class="form-control" id="num" name="num" value=<?PHP echo $_POST['num']; ?> readonly>
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
                                     <div class="col-md-12">
 										<div class="form-group">
 
@@ -96,7 +103,7 @@
 
                                     <div class="col-md-12">
 										<div class="form-group">
-                                        <textarea name="commentaire" class="form-control" id="commentaire" placeholder="Your Message *" ></textarea>
+                                        <input type="text" class="form-control" id="commentaire" name="commentaire" value=<?PHP echo $_POST['commentaire']; ?> ></input>
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
