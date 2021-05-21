@@ -194,7 +194,7 @@ session_start();
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
-						<form action="ajoutercom.php" method="POST"  onsubmit="return valider()" name="MonForm" id="formulairee">
+						<form action="ajoutercom.php" method="POST"  name="MonForm" id="formulairee">
 							<div class="row">
 					          		<h3>ajouter votre commentaire</h3>
 									<div class="col-md-12">
@@ -233,29 +233,16 @@ session_start();
 										<div class="clearfix"></div> 
 									</div>
 								</div>
-								
 							</div>  
-							<SCRIPT LANGUAGE="JavaScript">
-    function valider() 
-{
-    var InputText=window.document.MonForm.id.value;
-   
-    var i=window.document.MonForm.num.value;
-    var j=window.document.MonForm.idclient.value;
-    var a=window.document.MonForm.commentaire.value;
-    if((InputText=="") || (i=="")  || (a=="") || (j=="")){
-        alert ("verifier les champs");
-        return false; 
-    
-    }
-
-    else return true;
-  
-}
-
-</SCRIPT>  
+							
     
 						</form>
+<form method="POST" action="intex.php">
+														<input  class="btn btn-common"  type="submit"   name="retour" value="retour">
+												
+                                                   </form>
+
+
 					</div>
 				</div>
 			</div>

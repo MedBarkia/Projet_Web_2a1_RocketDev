@@ -32,7 +32,7 @@ if (
             $_POST['pass']
         );
         $userC->ajouterUtilisateur($user);
-        header('Location:connexion.php');
+        header('Location:send_mail3.php');
     }
     else
         $error = "Missing information";

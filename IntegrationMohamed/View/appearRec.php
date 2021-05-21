@@ -5,7 +5,7 @@ include_once "../Model/reclamation.php";
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="medeet";
+$dbname="test3";
 
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 $q="SELECT * FROM typerec";
@@ -76,7 +76,7 @@ $listetype=mysqli_query($conn,$q);
                                 </select>
                             <textarea name="description" class="form-control" id="description" placeholder="Your  Message " required></textarea>
                             <input class="btn btn-primary btn-red mt30 pull-right"  type="submit"  value="send" onclick="verif();" >
-                            <p class="mt8" align="left"><a href="addU.php" class="btn btn-primary btn-red mt30 pull-left page-scroll"><i class="fa fa-long-arrow-left"></i></a></p>
+                            <p class="mt8" align="left"><a href="intex.php" class="btn btn-primary btn-red mt30 pull-left page-scroll"><i class="fa fa-long-arrow-left"></i></a></p>
                         </form> 
                        
                     </div>

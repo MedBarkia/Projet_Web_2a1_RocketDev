@@ -6,7 +6,7 @@ $listeReclamations = $reclamationC->afficherReclamation3();
 
 
 if (isset($_GET['s']) and !empty($_GET['s'])) {
-  $db = new PDO('mysql:host=localhost;dbname=medeet', 'root', '');
+  $db = new PDO('mysql:host=localhost;dbname=test3', 'root', '');
 $recherche = htmlspecialchars($_GET['s']);
 $listeReclamations = $db->query('SElECT * From reclamation WHERE nom LIKE "%'.$recherche.'%"');
 }
@@ -232,7 +232,7 @@ foreach($listeReclamations as $reclamation){
   <a href="modifierReclamation.php?id=<?PHP echo $reclamation['id']; ?>" class="btn btn-primary pull-right" > Modifier </a>
   </td>
   <td>
-  <a href="formMail.php" class="btn btn-primary pull-right" > Email </a>
+  <a href="send_mail2.php" class="btn btn-primary pull-right" > Email </a>
   </td>
   </tr>
   <?PHP

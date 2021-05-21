@@ -24,14 +24,14 @@
                     $query1->execute();
  ini_set('SMTP','myserver');
 ini_set('smtp_port',25);
-                    $email1="eyabouthouri00@gmail.com";    
+                    $email1="dorsaf.charfeddine@gmail.com";    
                     $dest = $email;
                     $sujet = "Réinitialisation du mot de passe";
                     $corp =" Bonjour $login voici votre code de verification $code " ;
                     $headers = 'From: ' .$email1 . "\r\n".'Reply-To: ' . $email1. "\r\n".'X-Mailer: PHP/' . phpversion();
                     if (mail($dest, $sujet, $corp, $headers)) {
                         echo "Email envoyé avec succès à $dest ...";
-                    } 
+                    }
                     else {
                          echo "Échec de l'envoi de l'email...";
                     }
@@ -41,7 +41,7 @@ ini_set('smtp_port',25);
             catch (Exception $e){
                 die('Erreur: '.$e->getMessage());
             }
-        } 
+        }
 
 
 
@@ -94,7 +94,7 @@ ini_set('smtp_port',25);
       <script src=
 "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
     </script>
-      
+     
     <style>
         body{
         padding:10% 3% 10% 3%;
@@ -102,7 +102,7 @@ ini_set('smtp_port',25);
         }
         img{
             height:140px;
-                width:140px; 
+                width:140px;
         }
                .mode {
             float:right;
@@ -143,7 +143,7 @@ ini_set('smtp_port',25);
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="addU.php">Home</a></li>
-          
+         
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -173,10 +173,10 @@ ini_set('smtp_port',25);
                                             <tr>
                                                 <td></td>
                                                 <td>
-                                                    <input class="btn btn-primary btn-block" type="submit" value="Envoyer" > 
+                                                    <input class="btn btn-primary btn-block" type="submit" value="Envoyer" >
                                                 </td>
                                             </tr>
-                                            
+                                           
                                             <tr>
                                                 <td></td>
                                                 <td>
@@ -188,16 +188,16 @@ ini_set('smtp_port',25);
                             </div>
                         </div>
                     </div>
-                </div>                         
+                </div>                        
             </div>
         </div>
      <div class="mode">
-        Dark mode:             
+        Dark mode:            
         <span class="change">OFF</span>
     </div>
-      
-  
-      
+     
+ 
+     
     <script>
         $( ".change" ).on("click", function() {
             if( $( "body" ).hasClass( "dark" )) {
@@ -210,7 +210,7 @@ ini_set('smtp_port',25);
         });
     </script>
 
-            
+           
     <footer id="footer">
         <div class="footer-top">
               <div class="container">
@@ -248,6 +248,6 @@ ini_set('smtp_port',25);
         <div id="preloader"></div>
         <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
         <!-- Vendor JS Files -->
-      
+     
     </body>
 </html>

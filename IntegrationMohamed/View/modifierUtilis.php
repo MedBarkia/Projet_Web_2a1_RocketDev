@@ -250,7 +250,10 @@ if(!isset($_SESSION["e"])){
         <span class="change">OFF</span>
     </div>
       
-  
+  <form method="POST" action="intex.php">
+                                                        <input  class="btn btn-common"  type="submit"   name="retour" value="retour">
+                                                
+                                                   </form>
       
     <script>
         $( ".change" ).on("click", function() {

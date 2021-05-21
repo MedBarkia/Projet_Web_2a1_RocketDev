@@ -2,6 +2,12 @@
 <?php 
 include "../Model/livreur.php";
 include "../Controller/livreurC.php";
+if(!isset($_SESSION["e"])){
+    var_dump($_SESSION);
+    // Si inexistante ou nulle, on redirige vers le formulaire de login
+    header('Location:connexion.php');
+    
+     }
 ?>
 
 <head>
@@ -44,28 +50,11 @@ include "../Controller/livreurC.php";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie" href="index.html"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
+                    <a class="navbar-brand smoothie" href="intex.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="main-navigation">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about" class="page-scroll">About Us</a></li>  
-                        <li><a href="#the-menu" class="page-scroll">Ordre</a></li>   
-                        <li><a href="#Produit" class="page-scroll">Produits</a></li>
-                        <li><a href="#Book" class="page-scroll">Chefs</a></li> 
-                        <li><a href="#messagee" class="page-scroll">Contact US</a></li>
-                        <li class="dropdown">
-                            <a href="#CATEGORIE" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"> CATEGORIE <span class="pe-7s-angle-down"></span></a>
-                        </li>
-               
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Se Conecter <span class="pe-7s-angle-down"></span></a>
-                        </li>
-                        <li><a href="#search"><i class="fa fa-search"></i></a></li>
-                    </ul>
-
-                </div>
+                
                 <!-- /.navbar-collapse -->         
 
             </div>
@@ -180,7 +169,7 @@ include "../Controller/livreurC.php";
                               </td>
                               <td>
                                   <div class="checkout_btn_inner d-flex align-items-center">
-                                      <a class="gray_btn" href="addU.php">Continuer vos achats </a>
+                                      <a class="gray_btn" href="intex.php">Continuer vos achats </a>
                                       
                                   </div>
                               </td>

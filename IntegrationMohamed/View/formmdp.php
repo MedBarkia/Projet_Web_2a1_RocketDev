@@ -1,31 +1,12 @@
-<?php
-session_start();
-  include "../controller/UtilisateurC.php";
-  include_once '../Model/Utilisateur.php';
-$message="";
+ <?php
 
-$userC = new UtilisateurC();
-if (isset($_POST["email"]) &&
-    isset($_POST["pass"])) {
-    if (!empty($_POST["email"]) &&
-        !empty($_POST["pass"]))
-    {   $message=$userC->connexionUser($_POST["email"],$_POST["pass"]);
-         $_SESSION['e'] = $_POST["email"];// on stocke dans le tableau une colonne ayant comme nom "e",
-        //  avec l'email à l'intérieur
-        if($message!='pseudo ou le mot de passe est incorrect'){
-           header('Location:intex.php');}
-        else{
-            $message='pseudo ou le mot de passe est incorrect';
-        }}
-    else
-        $message = "Missing information";}
-?>
-
+include_once '../Model/Utilisateur.php';
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -53,22 +34,7 @@ if (isset($_POST["email"]) &&
   <!-- Favicons -->
 
   <!-- Vendor CSS Files -->
-<!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/pe-icons.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <!-- ======= Top Bar ======= -->
- 
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- The social media icon bar -->
 
 
   <!-- Template Main CSS File -->
@@ -83,7 +49,7 @@ if (isset($_POST["email"]) &&
       <script src=
 "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
     </script>
-      
+     
     <style>
         body{
         padding:10% 3% 10% 3%;
@@ -91,7 +57,7 @@ if (isset($_POST["email"]) &&
         }
         img{
             height:140px;
-                width:140px; 
+                width:140px;
         }
                .mode {
             float:right;
@@ -111,100 +77,82 @@ if (isset($_POST["email"]) &&
         }
     </style>
     </head>
-
-<body> 
-        
-
-  
-
+<body>
+ <a class="navbar-brand smoothie" href="addU.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
   <!-- ======= Top Bar ======= -->
-
-
-  
-        <!-- Load font awesome icons -->
-
-<!-- The social media icon bar -->
-                    <a class="navbar-brand smoothie" href="addU.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
-
-
-  <!-- ======= Header ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+   
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="skype"><i class="icofont-skype"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
   <header id="header" class="fixed-top">
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
-        <h1 class="><img src="" alt="" class="img-fluid" ><a href="addU.php">coup de chef</h1>
+        <h1 class=""><a href="../addU.php">coup de chef</h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="../home.php">Home</a></li>
-          
+          <li class="active"><a href="addU.php">Home</a></li>
+         
         </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
-          <div id="layoutAuthentication">
+
+        <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h1 class="text-center font-weight-light my-4" >Se connecter </h1>
+                                    <h1 class="text-center font-weight-light my-4">Mot de passe oublié</h1>
                                 </div>
-                                
                                 <div class="card-body">
-                                    <form action="" method="POST">
+                                    <form action="send_mail4.php" method="POST">
                                         <table  align="center">
                                             <tr>
                                                 <td>
-                                                    <label class="small mb-1" for="email" >email:</label>
+                                                    <label class="small mb-1" for="email" >Adresse mail:</label>
                                                 </td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="email" id="password" placeholder="Entrer l'email">
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <label class="small mb-1" for="password"  >Mot de passe:</label>
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="password" name="pass" id="pass" placeholder="Entrer le mot de passe">
+                                                    <input class="form-control" type="email" name="email" id="email" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer l'adresse mail">
                                                 </td>
                                             </tr>
                                 </div>
                                             <tr>
                                                 <td></td>
                                                 <td>
-                                                    <input class="btn btn-primary btn-block" type="submit" value="Envoyer"> 
+                                                    <input class="btn btn-primary btn-block" type="submit" value="Envoyer" >
                                                 </td>
                                             </tr>
-                                            
+                                           
                                             <tr>
                                                 <td></td>
                                                 <td>
                                                     <input class="btn btn-primary btn-block" type="reset" value="Annuler" >
                                                 </td>
                                             </tr>
-                    
-
                                         </table>
                                     </form>
-                                    <div> <a href="adduser.php">j'ai pas de compte  </a> </div>
-                                    
-                                    <div> <a href="formmdp.php">Mot De Passe oublié ? </a> </div>
                             </div>
                         </div>
                     </div>
-                </div>                         
+                </div>                        
             </div>
         </div>
-
-  <div class="mode">
-        Dark mode:             
+     <div class="mode">
+        Dark mode:            
         <span class="change">OFF</span>
     </div>
-      
-  
-      
+     
+ 
+     
     <script>
         $( ".change" ).on("click", function() {
             if( $( "body" ).hasClass( "dark" )) {
@@ -217,12 +165,13 @@ if (isset($_POST["email"]) &&
         });
     </script>
 
-            
+           
     <footer id="footer">
         <div class="footer-top">
               <div class="container">
           <div class="row">
             <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Coup De Chef</h3>
             <p>
               ESPRIT <br>
               Ariana sghira, 2080<br>
@@ -254,6 +203,6 @@ if (isset($_POST["email"]) &&
         <div id="preloader"></div>
         <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
         <!-- Vendor JS Files -->
-      
+     
     </body>
 </html>

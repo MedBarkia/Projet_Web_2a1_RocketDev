@@ -221,7 +221,7 @@ coup de chef  </title>
 						<a  href="modifierUtilisateur.php?id=<?PHP echo $user['id']; ?>"  class="btn btn-primary pull-right">Modifier </a>
 					</td>
   <td>
-  <a href="indexmail.php" class="btn btn-primary pull-right" > Email </a>
+  <a href="send_mail3.php" class="btn btn-primary pull-right" > Email </a>
   </td>
 				</tr>
 			<?PHP

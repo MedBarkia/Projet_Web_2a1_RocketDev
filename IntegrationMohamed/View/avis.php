@@ -33,7 +33,7 @@ if (
             $_POST['name'],
             $_POST['rate'], );
         $avisC->ajouteravis($avis);
-        header('Location:afficheravis.php');
+        header('Location:addU.php');
     }
     else
         $error = "Missing information";

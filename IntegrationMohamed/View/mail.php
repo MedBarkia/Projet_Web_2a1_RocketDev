@@ -7,7 +7,7 @@ if (isset($_POST['sendMailBtn'])) {
     $to = $toEmail;
     $subject = $subjectName;
     $header = "MIME-Version: 1.0" . "\r\n";
-    $header.='From:"coup de chef"<eyabouthouri00@gmail.com'."\n";
+    $header.='From:"coup de chef"<dorsaf.charfeddine@gmail.com'."\n";
     $header.= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $header.='Content-Transfer-Encoding: 8bit';
     $message = '<!doctype html>

@@ -68,14 +68,12 @@
                         <li> <a href="Connexion.php" class="page-scroll">Se Connecter</a></li>
                     </ul> 
                     <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#about" class="page-scroll">About Us</a></li> 
-                        <li><a href="#the-menu" class="page-scroll">Ordre</a></li>   
+                    <li><a href="#about" class="page-scroll">A propos de nous</a></li> 
                         <li><a href="#Produit" class="page-scroll">Produits</a></li>
                         <li><a href="#Book" class="page-scroll">Chefs</a></li> 
                         <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li> 
                         <li><a href="commentairerestau.php" class="page-scroll">restaurants</a></li> 
                         <li><a href="signupForum.php" class="page-scroll">Aide</a></li>  
-                        <li><a href="#search"><i class="fa fa-search"></i></a></li>   
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->         
@@ -185,6 +183,12 @@
                     </tbody>
                 </div>
             </div>
+            <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"><h3><span class="theme-accent-color"><B>Donner votre avis</B></span></h3></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a"> 
+                                <a class="dropdown-item" href="avis.php">Donner un avis</a> 
+                            </div>
+                    </div>
 
 </section>
        
@@ -218,166 +222,13 @@
             </div>
 
         </section>
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg10.jpg" data-speed="0.8">
-            <div class="section-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center mb100">
-                            <h2 class="section-heading">Our <span class="theme-accent-color">Clients</span> Satisfaits</h2>
-                            <hr class="thin-hr">
-                            <h3 class="section-subheading secondary-font">Satisfaction, toujours.</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/mohamed.jpg" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Barkia Mohamed</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/elaa.jpg" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Boulifi Elaa</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/asma.jpg" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Oudherfi Asma</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/dorsaf.PNG" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Charfeddine Dorsaf</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/eya.jpg" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Bouthoury Eya</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <img src="assets/img/team/mariem.jpg" class="img-responsive testimonial-author" alt="">
-                                                </div>
-                                                <div class="col-sm-10">                                                
-                                                    <h4>Ben Khlifa Mariem</h4>
-                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                                    <ul class="list-inline">
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg1.jpg" data-speed="0.8">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center mb100">
-                            <h2 class="section-heading">Type <span class="theme-accent-color">Your</span> Order</h2>
+                            <h2 class="section-heading">Votre <span class="theme-accent-color">Ordre</span> </h2>
                         </div>
                     </div>
                 </div>
@@ -399,45 +250,14 @@
                                   <li>Wednesday</li>
                                   <li>Thursday</li>
                                   <li>Friday</li>
-                                  <li>Saturday</li>
-                                  <li>Sunday</li>
-                                </ul>
-                              </div>
-                              <div id="messagee" class="col-xs-7">
-                                <ul class="list-unstyled">
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
                                 </ul>
                               </div>
                             </div>
                         </div>                
                     </div>
-                    <div class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"><h3><span class="theme-accent-color"><B>Donner votre avis</B></span></h3></a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a"> 
-								<a class="dropdown-item" href="avis.php">Donner un avis</a>	
-							</div>
-					</div>
+                    
       
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <div id="message" class="col-md-12"></div>
-                                <form method="post" action="sendemail.php" id="contactform" class="form-group main-contact-form col-md-12 wow fadeIn" data-wow-delay="0.2s">
-                                    <input type="text" class="form-control col-md-4" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." />
-                                    <input type="text" class="form-control col-md-4" name="email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address." />
-                                    <input type="text" class="form-control col-md-4" name="website" placeholder="Your URL *" id="website" required data-validation-required-message="Please enter your web address." />
-                                    <textarea name="comments" class="form-control" id="comments" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
-                                    <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit" value="Submit" />
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 
             </div>

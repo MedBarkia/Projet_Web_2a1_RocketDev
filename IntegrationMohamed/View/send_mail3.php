@@ -44,8 +44,8 @@ foreach($liste as $row){
 
 }
 $mailto = $email;
-$mailSub = 'Commande Coup de Chef';
-$mailMsg = 'Votre commande a été effectué avec succés un livreur va vous contacter';
+$mailSub = 'Inscription avec succes';
+$mailMsg = 'Bienvenu, vous etes bien inscrit dans notre site COUP DE CHEF';
 require 'PHPMailer-master/PHPMailerAutoload.php';
 $mail = new PHPMailer();
 $mail->IsSmtp();
@@ -65,7 +65,7 @@ $mail->AddAddress($mailto);
 if (!$mail->Send()) {
     echo "Mail Not Sent to ";
 } else {
-    header('Location: elaa.php');
+    header('Location: connexion.php');
 }
 ?>
 

@@ -79,23 +79,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie" href="addU.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
+                    <a class="navbar-brand smoothie" href="intex.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">About Us</a></li>  
-                        <li><a href="#the-menu" class="page-scroll">Ordre</a></li>   
-                        <li><a href="addU.php" class="page-scroll">Produits</a></li>
-                        <li><a href="addU.php" class="page-scroll">Chefs</a></li> 
+                        <li><a href="intex.php" class="page-scroll">Produits</a></li>
+                        <li><a href="intex.php" class="page-scroll">Chefs</a></li> 
                         <li><a href="appearRec.php" class="page-scroll">Reclamation</a></li> 
                         <li><a href="commentairerestau.php" class="page-scroll">restaurants</a></li> 
-                        <li><a href="#messagee" class="page-scroll">Contact US</a></li>               
-                        <li class="dropdown">
-                            <a href="connexion.php" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Se Connecter <span class="pe-7s-angle-down"></span></a>
-                        </li>
-                        <li><a href="#search"><i class="fa fa-search"></i></a></li>
                     </ul>
 
                 </div>

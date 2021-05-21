@@ -240,9 +240,7 @@ foreach($listetyperecs as $typerec){
   <input type="hidden" value="<?PHP echo $typerec['type']; ?>" name="type">
    </form>
   </td>
-  <td>
-  <a href="modifiertyperec.php?type=<?PHP echo $typerec['type']; ?>" class="btn btn-primary pull-right" > Modifier </a>
-  </td>
+  
   </tr>
   <?PHP
 }
